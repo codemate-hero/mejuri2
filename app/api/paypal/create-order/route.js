@@ -1,6 +1,7 @@
 import { connectDB } from "@/app/lib/db";
 import Cart from "@/app/models/Cart";
 import Order from "@/app/models/Order";
+import Product from "@/app/models/Product";
 import { createPayPalOrder } from "@/app/lib/paypal";
 import { getUserIdFromRequest } from "@/app/lib/auth";
 import { getUserIpFromRequest } from "@/app/lib/getUserIp";

@@ -2,6 +2,7 @@ import dns from "node:dns";
 
 dns.setDefaultResultOrder("ipv4first");
 import mongoose from "mongoose";
+import "@/app/models/Product";
 
 const mongoUri = process.env.MONGODB_URI;
 
