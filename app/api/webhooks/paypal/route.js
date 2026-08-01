@@ -41,7 +41,16 @@ export async function POST(req) {
     }
 
     const isVerified = await verifyPayPalWebhook(req.headers, event);
+    console.log("[PayPal webhook] received", {
+      eventType: event.event_type,
+      resourceId: event.resource?.id,
+      customId: event.resource?.custom_id,
+      orderId: event.resource?.supplementary_data?.related_ids?.order_id,
+      verified: isVerified,
+    });
+
     if (!isVerified) {
+      console.warn("[PayPal webhook] signature verification failed");
       return Response.json({ message: "Invalid PayPal signature" }, { status: 401 });
     }
 
@@ -54,6 +63,13 @@ export async function POST(req) {
 
     const resource = event.resource;
     const order = await findWebhookOrder(resource);
+    console.log("[PayPal webhook] matched order", {
+      orderId: order?._id?.toString(),
+      existingPaymentStatus: order?.paymentStatus,
+      existingOrderStatus: order?.orderStatus,
+      existingPaypalCaptureId: order?.paypalCaptureId,
+    });
+
     if (!order) {
       return Response.json({ message: "Order not found" }, { status: 404 });
     }
