@@ -1,0 +1,498 @@
+[
+  {
+    "city": "BROOKLYN, NY",
+    "name": "WILLIAMSBURG",
+    "address": "107 North 6th Street",
+    "storeUrl": "https://mejuri.com/world/en/stores/williamsburg",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/a5e9c18c735fe46c9ffa60b2d1969f58eb73e839-8256x6192.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - NORTHEAST"
+  },
+  {
+    "city": "DENVER, CO",
+    "name": "CHERRY CREEK",
+    "address": "3000 E 1st Avenue, Unit #144",
+    "storeUrl": "https://mejuri.com/world/en/stores/cherry-creek",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/352ca55538365550a4abc5e9968b5cb44dab8248-5000x3333.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "MISSISSAUGA, ON",
+    "name": "SQUARE ONE",
+    "address": "100 City Centre Drive",
+    "storeUrl": "https://mejuri.com/world/en/stores/square-one",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/8c514a07340caf94b2a8d86e920c15ac5fabb415-6000x3992.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "CANADA"
+  },
+  {
+    "city": "TORONTO, ON",
+    "name": "OSSINGTON",
+    "address": "64 Ossington Avenue",
+    "storeUrl": "https://mejuri.com/world/en/stores/ossington",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/a92a56bf4fdc9ba24edc356e124017ad6937576b-3840x2561.webp?w=1920&q=90&fit=max&auto=format",
+    "region": "CANADA"
+  },
+  {
+    "city": "OAKBROOK, IL",
+    "name": "OAKBROOK",
+    "address": "32 Oakbrook Center",
+    "storeUrl": "https://mejuri.com/world/en/stores/oakbrook",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/fecb6bc8e2b9de347a74da248abca84e0f29d781-1464x1056.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - MIDWEST"
+  },
+  {
+    "city": "SCOTTSDALE, AZ",
+    "name": "KIERLAND COMMONS",
+    "address": "15215 N Kierland Blvd., Suite #170B1A",
+    "storeUrl": "https://mejuri.com/world/en/stores/kierland-commons",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/fd87cf3c4340d748fac04a00a2f78ca1350ded27-1248x800.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - SOUTHWEST"
+  },
+  {
+    "city": "KUWAIT CITY",
+    "name": "ASSIMA MALL",
+    "address": "600 Al-Shuhada Street, Block 3, Al-Murqab",
+    "storeUrl": "https://mejuri.com/world/en/stores/assima-mall",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/60284f40fbe4b2e0e34db817784baf5b793922f4-1432x918.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "MIDDLE EAST"
+  },
+  {
+    "city": "VANCOUVER, BC",
+    "name": "KITSILANO",
+    "address": "2166 West 4th Avenue",
+    "storeUrl": "https://mejuri.com/world/en/stores/kitsilano",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/10514b355752c8d797d57cb07783cac169b70f07-832x600.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": ""
+  },
+  {
+    "city": "ROSEVILLE, CA",
+    "name": "ROSEVILLE GALLERIA",
+    "address": "1151 Galleria Blvd, Suite 143",
+    "storeUrl": "https://mejuri.com/world/en/stores/roseville-galleria",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/f57fcb07125b340dc8a95157659b7f16d3ec93ad-1248x800.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "LONDON, ENGLAND",
+    "name": "SELFRIDGES LONDON",
+    "address": "400 Oxford St, London W1A 1AB",
+    "storeUrl": "https://mejuri.com/world/en/stores/selfridges",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/ad8e93028ad948a06549c754b71dc198a9643f69-5616x3744.tif?w=1920&q=90&fit=max&auto=format",
+    "region": "UK"
+  },
+  {
+    "city": "WHITE PLAINS, NY",
+    "name": "THE WESTCHESTER",
+    "address": "125 Westchester Avenue, Unit 2470",
+    "storeUrl": "https://mejuri.com/world/en/stores/westchester",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/c6e15120e012d2dfdd52dc5be0add5ec2355bf76-1248x800.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - NORTHEAST"
+  },
+  {
+    "city": "PALO ALTO, CA",
+    "name": "STANFORD SHOPPING CENTRE",
+    "address": "180 El Camino Real, Suite 1150",
+    "storeUrl": "https://mejuri.com/world/en/stores/stanford-shopping-centre",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/2aba845c2655ba06a6fd663cb4b398fc993dbb77-5000x3335.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "SAN JOSÉ, CA",
+    "name": "SANTANA ROW",
+    "address": "333 Santana Row, Suite 1005",
+    "storeUrl": "https://mejuri.com/world/en/stores/santana-row",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/d4b710791743bcc809ba95381b391f9df2ddf9d6-1464x1056.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "NEW YORK, NY",
+    "name": "NORDSTROM",
+    "address": "225 W 57TH ST, New York, NY 10019",
+    "storeUrl": "https://mejuri.com/world/en/stores/nordstrom",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/61a622017283b36baa56205e0eee61c4c593b22f-1248x800.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - NORTHEAST"
+  },
+  {
+    "city": "VANCOUVER, BC",
+    "name": "HOLT RENFREW VANCOUVER PACIFIC CENTRE",
+    "address": "737 Dunsmuir Street",
+    "storeUrl": "https://mejuri.com/world/en/stores/holts-vancouver",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/909c8f8dfd0598d74b31992e12a682709f29b54c-6720x4480.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": ""
+  },
+  {
+    "city": "SYDNEY, NSW",
+    "name": "THE GALERIES",
+    "address": "500 George St.",
+    "storeUrl": "https://mejuri.com/world/en/stores/the-galeries",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/d7ad2a1ed05fbefeabfdc492d6ae8543b117d9d2-8092x5115.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "AUSTRALIA"
+  },
+  {
+    "city": "PORTLAND, OR",
+    "name": "WASHINGTON SQUARE",
+    "address": "9534 SW Washington Square Rd",
+    "storeUrl": "https://mejuri.com/world/en/stores/washingtonsquare",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/ac221d2871b73e60b40304d629f64fa600d4a00f-4928x3398.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "KUWAIT CITY,",
+    "name": "THE AVENUES MALL",
+    "address": "5th Ring Road - Al Rai , Farwaniya",
+    "storeUrl": "https://mejuri.com/world/en/stores/avenues-mall",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/0a96292f3879507ea05e090d9372686260b39187-1664x1066.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "MIDDLE EAST"
+  },
+  {
+    "city": "PARAMUS, NJ",
+    "name": "GARDEN STATE PLAZA",
+    "address": "One Garden State Plaza Pkwy, Suite 2118",
+    "storeUrl": "https://mejuri.com/world/en/stores/garden-state-plaza",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/6bb989abc05a0093bf63509422f23994b0dc4e58-1248x800.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - NORTHEAST"
+  },
+  {
+    "city": "TORONTO, ON",
+    "name": "HOLT RENFREW BLOOR",
+    "address": "50 Bloor Street West",
+    "storeUrl": "https://mejuri.com/world/en/stores/holt-renfrew",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/0459e195fb3d89333ab06a4063e4a7c24ea0cb5d-7656x5504.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "CANADA"
+  },
+  {
+    "city": "MONTREAL, QC",
+    "name": "RUE PEEL",
+    "address": "1410 Rue Peel",
+    "storeUrl": "https://mejuri.com/world/en/stores/rue-peel",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/d752b2e64f55ff514ab3add6606c3a67c22c1390-1464x1056.webp?w=1920&q=90&fit=max&auto=format",
+    "region": ""
+  },
+  {
+    "city": "LONDON, UK",
+    "name": "COVENT GARDEN",
+    "address": "30 King Street",
+    "storeUrl": "https://mejuri.com/world/en/stores/covent-garden",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/985681d0607cb6b908a389b12a28038c5ac41631-1920x1281.webp?w=1920&q=90&fit=max&auto=format",
+    "region": "UK"
+  },
+  {
+    "city": "SEATTLE, WA",
+    "name": "UNIVERSITY VILLAGE",
+    "address": "2621 NE University Village Street",
+    "storeUrl": "https://mejuri.com/world/en/stores/university-village",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/db94567404f9b7b0cab266ebfb0d12adb7a5e02c-1464x1056.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "SAN DIEGO, CA",
+    "name": "UTC",
+    "address": "4545 La Jolla Village",
+    "storeUrl": "https://mejuri.com/world/en/stores/utc",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/7c7f148931036282ac73e838fbb4fc31db5939b9-1464x1056.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "WASHINGTON, DC",
+    "name": "M STREET",
+    "address": "3225 M Street NW",
+    "storeUrl": "https://mejuri.com/world/en/stores/m-street",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/c8b9bcf835f8cbdf4a4a84bb1ee99df894efab51-8256x5504.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - SOUTHEAST"
+  },
+  {
+    "city": "CHICAGO, IL",
+    "name": "RUSH STREET",
+    "address": "900 N Rush St",
+    "storeUrl": "https://mejuri.com/world/en/stores/rush-street",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/26d46f88e2114fb66a14f2bc836f8a098e5c537e-1248x800.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - MIDWEST"
+  },
+  {
+    "city": "NEWTON, MA",
+    "name": "CHESTNUT HILL",
+    "address": "27 Boylston St, Suite 265, Chestnut Hill, MA 02467",
+    "storeUrl": "https://mejuri.com/world/en/stores/chestnut-hill",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/3cb28f4fa378968162021d2aa657ac74ce185166-8006x5340.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - NORTHEAST"
+  },
+  {
+    "city": "SKOKIE, IL",
+    "name": "OLD ORCHARD",
+    "address": "4999 Old Orchard Center, Space B34",
+    "storeUrl": "https://mejuri.com/world/en/stores/old-orchard",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/7d50ff20a4394d5bd5aa541c969ebb17d80d0e43-6598x4544.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - MIDWEST"
+  },
+  {
+    "city": "CHICAGO, IL",
+    "name": "WEST LOOP",
+    "address": "940 W Randolph Street",
+    "storeUrl": "https://mejuri.com/world/en/stores/west-loop",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/c6ece70b376e716fb7abb96d6f642908a75a7919-750x542.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - MIDWEST"
+  },
+  {
+    "city": "NASHVILLLE, TN",
+    "name": "12 SOUTH",
+    "address": "2803 12th Avenue South",
+    "storeUrl": "https://mejuri.com/world/en/stores/12-south",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/3b5befe1b3a8a06b7b1a4fb75203d32da4b18aba-5844x3895.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - SOUTHEAST"
+  },
+  {
+    "city": "BELLEVUE, WA",
+    "name": "BELLEVUE SQUARE",
+    "address": "124 Bellevue Square, Unit L124",
+    "storeUrl": "https://mejuri.com/world/en/stores/bellevue-square",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/eb316830a1423c3a4eb73101a322709dc57611de-720x648.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "SHORT HILLS, NJ",
+    "name": "SHORT HILLS",
+    "address": "1200 Morris Turnpike, Suite B264",
+    "storeUrl": "https://mejuri.com/world/en/stores/short-hills",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/3242104bd460c8b05544da29f470b7d033d768ab-2250x1500.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - NORTHEAST"
+  },
+  {
+    "city": "NEW YORK, NY",
+    "name": "FLATIRON",
+    "address": "144 5th Avenue",
+    "storeUrl": "https://mejuri.com/world/en/stores/flatiron",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/3de56bc93bc8608f016205a74ba4723738f8d5bf-8109x5406.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - NORTHEAST"
+  },
+  {
+    "city": "AVENTURA, FL",
+    "name": "AVENTURA MALL",
+    "address": "19565 Biscayne, Blvd. Space #1930",
+    "storeUrl": "https://mejuri.com/world/en/stores/aventura-mall",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/9691d1cf759a8a260a996df2b1173662006b8763-1248x800.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - SOUTHEAST"
+  },
+  {
+    "city": "ATLANTA, GA",
+    "name": "LENOX SQUARE",
+    "address": "3393 Peachtree Rd NE, unit # 3002A",
+    "storeUrl": "https://mejuri.com/world/en/stores/lenox-square",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/bf7653a7493cf0b1640bbd3792b96e811f707c99-1248x801.tif?w=1920&q=90&fit=max&auto=format",
+    "region": "US - SOUTHEAST"
+  },
+  {
+    "city": "AUSTIN, TX",
+    "name": "DOMAIN NORTHSIDE",
+    "address": "11700 Domain Boulevard, Suite 126",
+    "storeUrl": "https://mejuri.com/world/en/stores/domain-northside",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/f325db92b17ecf88ee613e3c6fd7de27e5a8d5cf-688x494.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - SOUTHWEST"
+  },
+  {
+    "city": "KING OF PRUSSIA, PA",
+    "name": "KING OF PRUSSIA",
+    "address": "160 North Gulph Road Unit 2939",
+    "storeUrl": "https://mejuri.com/world/en/stores/king-of-prussia",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/752625920e9fd6764e9cb55cd243212df26f261c-1248x800.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - NORTHEAST"
+  },
+  {
+    "city": "HOUSTON, TX",
+    "name": "MONTROSE COLLECTIVE",
+    "address": "888 Westheimer Road, Suite 158",
+    "storeUrl": "https://mejuri.com/world/en/stores/montrose-collective",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/5c1e1a7025f0589dcae57eb23a63007aeae6be79-832x600.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - SOUTHWEST"
+  },
+  {
+    "city": "WALNUT CREEK, CA",
+    "name": "BROADWAY PLAZA",
+    "address": "1235 Broadway Plaza Suite C44",
+    "storeUrl": "https://mejuri.com/world/en/stores/broadway-plaza",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/c3deb17b99b2ffd024aad1e420a1c1055b323cc0-1248x800.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "CALGARY, AB",
+    "name": "CHINOOK CENTRE",
+    "address": "6455 Macleod Trail SW",
+    "storeUrl": "https://mejuri.com/world/en/stores/chinook-centre",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/535bbaf7ed0c94fcd50c5db892efa462a34f7689-750x542.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": ""
+  },
+  {
+    "city": "COSTA MESA, CA",
+    "name": "SOUTH COAST PLAZA",
+    "address": "3333 Bristol St. Suite 2810",
+    "storeUrl": "https://mejuri.com/world/en/stores/south-costa-plaza",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/dff68f2d5d54ead131bd239f736b01ef8a5757e0-7950x5300.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "SAN FRANCISCO, CA",
+    "name": "HAYES STREET",
+    "address": "327A Hayes Street",
+    "storeUrl": "https://mejuri.com/world/en/stores/hayes-street",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/23824910acd82514b9dbcd75cd2a6aae45378ac8-750x542.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "BOSTON, MA",
+    "name": "NEWBURY STREET",
+    "address": "126 Newbury Street",
+    "storeUrl": "https://mejuri.com/world/en/stores/newbury-street",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/5cd6f1ffefe7c3377192e0cbd23c233144fbb14a-832x600.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - NORTHEAST"
+  },
+  {
+    "city": "CANOGA PARK, CA",
+    "name": "TOPANGA",
+    "address": "6600 Topanga Canyon Blvd Suite #2070 CA 91303",
+    "storeUrl": "https://mejuri.com/world/en/stores/topanga",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/0534e2012ac3b802caa57b6289848434a321ed4c-8063x5375.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "MIAMI, FL",
+    "name": "WYNWOOD",
+    "address": "219 NW 25th Street Miami",
+    "storeUrl": "https://mejuri.com/world/en/stores/wynwood",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/1025cd81a7d4c0e2a76a3f8eb7b70b85c8831842-720x648.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - SOUTHEAST"
+  },
+  {
+    "city": "TYSONS, VA",
+    "name": "TYSONS CORNER",
+    "address": "1961 Chain Bridge Rd , 22102 unit 8017",
+    "storeUrl": "https://mejuri.com/world/en/stores/tysonscorner",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/4c9005178817d1f3dcf7fa2e350b2803c5da5c7c-8256x5504.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - SOUTHEAST"
+  },
+  {
+    "city": "MIAMI, FL",
+    "name": "BRICKELL CITY CENTER",
+    "address": "701 South Miami Avenue, 33131 Suite #235",
+    "storeUrl": "https://mejuri.com/world/en/stores/brickell-city-center",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/e5c88e38acd3abc87c4524f945cda0854a80ef83-1248x800.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - SOUTHEAST"
+  },
+  {
+    "city": "VENICE, CA",
+    "name": "ABBOT KINNEY BOULEVARD",
+    "address": "1110 Abbot Kinney Boulevard",
+    "storeUrl": "https://mejuri.com/world/en/stores/abbot-kinney-boulevard",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/aea1ec74e0949b230792761d723434e17e6e5761-8256x5504.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "CORTE MADERA, CA",
+    "name": "THE VILLAGE AT CORTE MADERA",
+    "address": "Village at Corte Madera, 1540 Redwood Hwy, Unit C003",
+    "storeUrl": "https://mejuri.com/world/en/stores/corte-madera",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/b985a639976dad047d1dbe5181f77834b7121eaf-1664x1200.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "NORTH YORK, ON",
+    "name": "YORKDALE SHOPPING CENTRE",
+    "address": "3401 Dufferin Street",
+    "storeUrl": "https://mejuri.com/world/en/stores/yorkdale-shopping-centre",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/2ac03fefdee00712d677ad726b2e3474a2f23adc-1464x1056.webp?w=1920&q=90&fit=max&auto=format",
+    "region": "CANADA"
+  },
+  {
+    "city": "WEST VANCOUVER, BC",
+    "name": "PARK ROYAL",
+    "address": "925 Main Street, Unit H3",
+    "storeUrl": "https://mejuri.com/world/en/stores/park-royal",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/71217058c7ba350e6fbf98156fa05b8a11b778f1-1920x1281.webp?w=1920&q=90&fit=max&auto=format",
+    "region": ""
+  },
+  {
+    "city": "BETHESDA, MD",
+    "name": "BETHESDA ROW",
+    "address": "7247 Woodmont Avenue",
+    "storeUrl": "https://mejuri.com/world/en/stores/bethesda-row",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/20f1021286cc273d03b55e22b0a723c47b9d11eb-720x648.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - NORTHEAST"
+  },
+  {
+    "city": "LAVAL, QC",
+    "name": "CARREFOUR LAVAL",
+    "address": "3003 Boulevard le Carrefour",
+    "storeUrl": "https://mejuri.com/world/en/stores/carrefour-laval",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/d5f2a0aa59b2bc93127d69a3a5f62a5b80f368ea-10795x7196.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": ""
+  },
+  {
+    "city": "LOS ANGELES, CA",
+    "name": "MELROSE AVENUE",
+    "address": "8404 Melrose Avenue",
+    "storeUrl": "https://mejuri.com/world/en/stores/melrose-avenue",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/043ed0af5dac4ea7fea1551f33adfb0ffc112a53-5641x3761.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "BOSTON, MA",
+    "name": "SEAPORT",
+    "address": "91 Pier 4 Boulevard",
+    "storeUrl": "https://mejuri.com/world/en/stores/seaport",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/df0124d2228b557d2bcd6c8d1c647d93689c3f80-5990x3993.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - NORTHEAST"
+  },
+  {
+    "city": "PHILADELPHIA, PA",
+    "name": "WALNUT STREET",
+    "address": "1525 Walnut Street",
+    "storeUrl": "https://mejuri.com/world/en/stores/walnut-street",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/a1c928d90f397bd5ef6a755223958b6e6bc21ea9-7407x5375.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - NORTHEAST"
+  },
+  {
+    "city": "GLENDALE, CA",
+    "name": "THE AMERICANA AT BRAND",
+    "address": "116 Caruso Avenue",
+    "storeUrl": "https://mejuri.com/world/en/stores/americana-at-brand",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/c22f33addfff3cc3a111615c86907b035a700974-8256x5504.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "SAN FRANCISCO, CA",
+    "name": "CHESTNUT STREET",
+    "address": "2050 Chestnut Street",
+    "storeUrl": "https://mejuri.com/world/en/stores/chestnut-street",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/955c919351026e37b216df871cc4cce00073a781-4096x2726.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - WEST"
+  },
+  {
+    "city": "LONDON, UK",
+    "name": "KINGS ROAD",
+    "address": "104 King's Road",
+    "storeUrl": "https://mejuri.com/world/en/stores/kings-road",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/27a493afd16c22672f8f83a930260742e5f39743-6466x4313.tif?w=1920&q=90&fit=max&auto=format",
+    "region": "UK"
+  },
+  {
+    "city": "MELBOURNE, AUSTRALIA",
+    "name": "EMPORIUM MELBOURNE",
+    "address": "Emporium Melbourne 287 Lonsdale St, Melbourne VIC 3000, Australia",
+    "storeUrl": "https://mejuri.com/world/en/stores/emporium-melbourne",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/b985a639976dad047d1dbe5181f77834b7121eaf-1664x1200.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "AUSTRALIA"
+  },
+  {
+    "city": "NEW YORK CITY, NY",
+    "name": "SOHO",
+    "address": "43 Spring Street",
+    "storeUrl": "https://mejuri.com/world/en/stores/soho",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/d07473e0ae6770fa23635dbe409a83bde97fa6af-832x600.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "US - NORTHEAST"
+  },
+  {
+    "city": "LONDON, UK",
+    "name": "MARYLEBONE",
+    "address": "96 Marylebone High Street",
+    "storeUrl": "https://mejuri.com/world/en/stores/marylebone",
+    "image": "https://cdn.sanity.io/images/lb60gqpm/production/355c9db0f355a32e6af29269d53675c50ba1a248-832x600.jpg?w=1920&q=90&fit=max&auto=format",
+    "region": "UK"
+  }
+]

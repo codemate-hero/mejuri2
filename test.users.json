@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "6a2be86bf63071326f74cc08"
+  },
+  "name": "arbab",
+  "lastName": "MMMMemon",
+  "email": "arbab12@jamil.com",
+  "password": "$2b$10$9kYPB44.9/UBmEtOHH0lcew8.zVREmla4MznGpWBpke1e/DiFnl0.",
+  "createdAt": {
+    "$date": "2026-06-12T11:07:23.135Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-12T11:07:23.135Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a32f078c08c21e53c441956"
+  },
+  "name": "guest user",
+  "email": "guest@jamil.com",
+  "password": "$2b$10$1U280pL2HYXb37J9xs2vDO5CsRmsEfjv/7IzVs1i3DhOo7FD/guwi",
+  "createdAt": {
+    "$date": "2026-06-17T19:07:36.818Z"
+  },
+  "updatedAt": {
+    "$date": "2026-06-17T19:07:36.818Z"
+  },
+  "__v": 0,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMyZjA3OGMwOGMyMWU1M2M0NDE5NTYiLCJlbWFpbCI6Imd1ZXN0QGphbWlsLmNvbSIsImlhdCI6MTc4MTgxODQxMSwiZXhwIjoxNzgyNDIzMjExfQ.H7hi-h4kPUQ3om5L9lsZZfXJ5tgOLboWRip5CxP1A6g"
+},
+{
+  "_id": {
+    "$oid": "6a64abc1fed77431da2d5aaf"
+  },
+  "name": "admin admin12",
+  "email": "admin@gmail.com",
+  "password": "$2b$10$nmc.umMQOmC9y.CfVtXCsuTOMxlKwzYlFU7wKw.piSexNY1t5Pm6W",
+  "role": "admin",
+  "createdAt": {
+    "$date": "2026-07-25T12:27:45.917Z"
+  },
+  "updatedAt": {
+    "$date": "2026-07-25T12:27:45.917Z"
+  },
+  "__v": 0
+}]

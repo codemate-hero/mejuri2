@@ -1,0 +1,2 @@
+PAYPAL_CLIENT_ID configured: 80
+PAYPAL_CLIENT_SECRET configured: 80

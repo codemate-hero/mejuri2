@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+@theme {
+  /* Font Families */
+  --font-display: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+@font-face {
+    font-family: SimonMono;
+    src: url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SimonMono-Thin-BH-_pU_D.woff2) format("woff2"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SimonMono-Thin-C_4eHZC0.woff) format("woff"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SimonMono-Thin-DKTRvDNn.otf) format("opentype");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: SimonMono;
+    src: url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SimonMono-Light-aeC27UZL.woff2) format("woff2"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SimonMono-Light-CFMZcqmd.woff) format("woff"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SimonMono-Light-Cv3m7BxA.otf) format("opentype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: SimonMono;
+    src: url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SimonMono-Regular-CDZgw6vh.woff2) format("woff2"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SimonMono-Regular-Bzs46yIB.woff) format("woff"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SimonMono-Regular-NlTkwo-S.otf) format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: SimonMono;
+    src: url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SimonMono-Medium-nFqDFbrI.woff2) format("woff2"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SimonMono-Medium-BNBlJvX2.woff) format("woff"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SimonMono-Medium-Cup5ZVcS.otf) format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: SimonMono;
+    src: url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SimonMono-Bold-C2rGJ_43.woff2) format("woff2"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SimonMono-Bold-C8uEuS31.woff) format("woff"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SimonMono-Bold-D5betyqf.otf) format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: SyndicatGrotesk;
+    src: url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SyndicatGrotesk-Light-DDi-AqNZ.woff2) format("woff2"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SyndicatGrotesk-Light-BpmBrLxB.woff) format("woff"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SyndicatGrotesk-Light-I4btOUbS.otf) format("opentype"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SyndicatGrotesk-Light-DMVWkWP4.ttf) format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: SyndicatGrotesk;
+    src: url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SyndicatGrotesk-Regular-KAIIE6vN.woff2) format("woff2"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SyndicatGrotesk-Regular-BeQEimLv.woff) format("woff"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SyndicatGrotesk-Regular-rFKSAhwA.otf) format("opentype"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SyndicatGrotesk-Regular-dB331z71.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: SyndicatGrotesk;
+    src: url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SyndicatGrotesk-Medium-DpkNCPc1.woff2) format("woff2"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SyndicatGrotesk-Medium-DJy9qiZX.woff) format("woff"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SyndicatGrotesk-Medium-Dv4I5eTZ.otf) format("opentype"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SyndicatGrotesk-Medium-CL3O6ZXN.ttf) format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: SyndicatGrotesk;
+    src: url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SyndicatGrotesk-Bold-DXHDIi_X.woff2) format("woff2"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SyndicatGrotesk-Bold-Z7R-R0rQ.woff) format("woff"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SyndicatGrotesk-Bold-C1jJi0GA.otf) format("opentype"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/SyndicatGrotesk-Bold-B1hPpzTT.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: BrandonGrotesque;
+    src: url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/brandon-regular-DUiaU_kR.woff2) format("woff2"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/brandon-regular-B2dXiEMI.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: BrandonGrotesque;
+    src: url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/brandon-bold-BXQx8ZpX.woff2) format("woff2"), url(https://cdn.shopify.com/oxygen-v2/32888/22641/46951/3818978/assets/brandon-bold-CF8mwv6Q.woff) format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --font-display: var(--font-host-grotesk), Arial, Helvetica, sans-serif;
+  --font-body: "SimonMono", "Courier New", Courier, monospace;
+  --font-security: "KapraNeue", sans-serif;
+  --font-letter-spacing-px: .0625rem;
+  --font-letter-spacing-display: .05em;
+  --font-letter-spacing-normal: 0;
+  --font-letter-spacing-utility: .02em;
+  --font-letter-spacing-compact: -.01em;
+  --font-line-height-compact: 1;
+  --font-line-height-snug: 1.3;
+  --font-line-height-normal: 1.33;
+  --font-line-height-spacious: 1.5;
+  --font-size-xxxs: .5rem;
+  --font-size-xxs: .625rem;
+  --font-size-xs: .75rem;
+  --font-size-sm: .875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3.25rem;
+  --font-size-6xl: 3rem;
+  --font-size-7xl: 4rem;
+  --font-size-8xl: 7rem;
+  --link-underline-gradient-settings: linear-gradient(transparent calc(100% - 1px), currentColor calc(100% + -0px), transparent calc(100% + 1px));
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-body);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-display);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Slide in animation from left */
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out forwards;
+}
+
+/* Slide out animation to left */
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide-out {
+  animation: slide-out 0.3s ease-out forwards;
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out forwards;
+}
+
+@keyframes slide-out-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.animate-slide-out-right {
+  animation: slide-out-right 0.3s ease-out forwards;
+}
+
+/* Marquee animation for continuous scrolling */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom zoom cursors */
+.cursor-zoom-in-custom {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="white" stroke="black" stroke-width="2"/><line x1="16" y1="10" x2="16" y2="22" stroke="black" stroke-width="2"/><line x1="10" y1="16" x2="22" y2="16" stroke="black" stroke-width="2"/></svg>') 16 16, zoom-in;
+}
+
+.cursor-zoom-out-custom {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="white" stroke="black" stroke-width="2"/><line x1="10" y1="16" x2="22" y2="16" stroke="black" stroke-width="2"/></svg>') 16 16, zoom-out;
+}

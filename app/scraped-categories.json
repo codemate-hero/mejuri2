@@ -1,0 +1,578 @@
+[
+  {
+    "navItem": "Mejuri",
+    "category": "Shop All",
+    "collectionHandle": "shop-all",
+    "categoryOrder": 0
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Summer Sale",
+    "collectionHandle": "summer-sale",
+    "categoryOrder": 1
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Before We Melt",
+    "collectionHandle": "before-we-melt",
+    "categoryOrder": 2
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Jewelry Under 200",
+    "collectionHandle": "jewelry-under-200",
+    "categoryOrder": 3
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Earrings",
+    "collectionHandle": "earrings",
+    "categoryOrder": 4
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Best Selling Earrings",
+    "collectionHandle": "best-selling-earrings",
+    "categoryOrder": 5
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Hoop Earrings",
+    "collectionHandle": "hoop-earrings",
+    "categoryOrder": 6
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Stud Earrings",
+    "collectionHandle": "stud-earrings",
+    "categoryOrder": 7
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Drop Earrings",
+    "collectionHandle": "drop-earrings",
+    "categoryOrder": 8
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Ear Cuffs",
+    "collectionHandle": "ear-cuffs",
+    "categoryOrder": 9
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Hoop Charms",
+    "collectionHandle": "hoop-charms",
+    "categoryOrder": 10
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Cartilage",
+    "collectionHandle": "cartilage",
+    "categoryOrder": 11
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Diamond Earrings",
+    "collectionHandle": "diamond-earrings",
+    "categoryOrder": 12
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Pearl Earrings",
+    "collectionHandle": "pearl-earrings",
+    "categoryOrder": 13
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Single Earrings",
+    "collectionHandle": "single-earrings",
+    "categoryOrder": 14
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Tennis Earrings",
+    "collectionHandle": "tennis-earrings",
+    "categoryOrder": 15
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Earrings Under 200",
+    "collectionHandle": "earrings-under-200",
+    "categoryOrder": 16
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Stevie Hoops",
+    "collectionHandle": "stevie-hoops",
+    "categoryOrder": 17
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Rings",
+    "collectionHandle": "rings",
+    "categoryOrder": 18
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Best Selling Rings",
+    "collectionHandle": "best-selling-rings",
+    "categoryOrder": 19
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Stackable Rings",
+    "collectionHandle": "stackable-rings",
+    "categoryOrder": 20
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Statement Rings",
+    "collectionHandle": "statement-rings",
+    "categoryOrder": 21
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Signet Rings",
+    "collectionHandle": "signet-rings",
+    "categoryOrder": 22
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Diamond Rings",
+    "collectionHandle": "diamond-rings",
+    "categoryOrder": 23
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Wedding Bands",
+    "collectionHandle": "wedding-bands",
+    "categoryOrder": 24
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Eternity Rings",
+    "collectionHandle": "eternity-rings",
+    "categoryOrder": 25
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Mens Rings",
+    "collectionHandle": "mens-rings",
+    "categoryOrder": 26
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Rings Under 200",
+    "collectionHandle": "rings-under-200",
+    "categoryOrder": 27
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Puzzle",
+    "collectionHandle": "puzzle",
+    "categoryOrder": 28
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Necklaces",
+    "collectionHandle": "necklaces",
+    "categoryOrder": 29
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Best Selling Necklaces",
+    "collectionHandle": "best-selling-necklaces",
+    "categoryOrder": 30
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Chain Necklaces",
+    "collectionHandle": "chain-necklaces",
+    "categoryOrder": 31
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Pendant Necklaces",
+    "collectionHandle": "pendant-necklaces",
+    "categoryOrder": 32
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Pearl Beaded Necklaces",
+    "collectionHandle": "pearl-beaded-necklaces",
+    "categoryOrder": 33
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Diamond Necklaces",
+    "collectionHandle": "diamond-necklaces",
+    "categoryOrder": 34
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Tennis Necklace Jewelry",
+    "collectionHandle": "tennis-necklace-jewelry",
+    "categoryOrder": 35
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Charm Necklaces",
+    "collectionHandle": "charm-necklaces",
+    "categoryOrder": 36
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Mens Necklaces",
+    "collectionHandle": "mens-necklaces",
+    "categoryOrder": 37
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Necklaces Under 200",
+    "collectionHandle": "necklaces-under-200",
+    "categoryOrder": 38
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Charms And Pendants",
+    "collectionHandle": "charms-and-pendants",
+    "categoryOrder": 39
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Bracelets",
+    "collectionHandle": "bracelets",
+    "categoryOrder": 40
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Best Selling Bracelets",
+    "collectionHandle": "best-selling-bracelets",
+    "categoryOrder": 41
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Chain Bracelets",
+    "collectionHandle": "chain-bracelets",
+    "categoryOrder": 42
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Cuffs And Bangles",
+    "collectionHandle": "cuffs-and-bangles",
+    "categoryOrder": 43
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Pearl Beaded Bracelets",
+    "collectionHandle": "pearl-beaded-bracelets",
+    "categoryOrder": 44
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Diamond Bracelets",
+    "collectionHandle": "diamond-bracelets",
+    "categoryOrder": 45
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Tennis Bracelet Jewelry",
+    "collectionHandle": "tennis-bracelet-jewelry",
+    "categoryOrder": 46
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Charm Bracelets",
+    "collectionHandle": "charm-bracelets",
+    "categoryOrder": 47
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Cord Bracelets",
+    "collectionHandle": "cord-bracelets",
+    "categoryOrder": 48
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Mens Bracelets",
+    "collectionHandle": "mens-bracelets",
+    "categoryOrder": 49
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Bracelets Under 200",
+    "collectionHandle": "bracelets-under-200",
+    "categoryOrder": 50
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Charms",
+    "collectionHandle": "charms",
+    "categoryOrder": 51
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Pendants",
+    "collectionHandle": "pendants",
+    "categoryOrder": 52
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Mens",
+    "collectionHandle": "mens",
+    "categoryOrder": 53
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Lifestyle",
+    "collectionHandle": "lifestyle",
+    "categoryOrder": 54
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Best Sellers",
+    "collectionHandle": "best-sellers",
+    "categoryOrder": 55
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Summer Essentials",
+    "collectionHandle": "summer-essentials",
+    "categoryOrder": 56
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Mejuri Play",
+    "collectionHandle": "mejuri-play",
+    "categoryOrder": 57
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Personalized",
+    "collectionHandle": "personalized",
+    "categoryOrder": 58
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Tennis Jewelry",
+    "collectionHandle": "tennis-jewelry",
+    "categoryOrder": 59
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Birthstones July",
+    "collectionHandle": "birthstones-july",
+    "categoryOrder": 60
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Wedding",
+    "collectionHandle": "wedding",
+    "categoryOrder": 61
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Bundles Sets",
+    "collectionHandle": "bundles-sets",
+    "categoryOrder": 62
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Solid Gold Jewelry",
+    "collectionHandle": "solid-gold-jewelry",
+    "categoryOrder": 63
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Sterling Silver Jewelry",
+    "collectionHandle": "sterling-silver-jewelry",
+    "categoryOrder": 64
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Lab Grown Gemstones",
+    "collectionHandle": "lab-grown-gemstones",
+    "categoryOrder": 65
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Diamonds",
+    "collectionHandle": "diamonds",
+    "categoryOrder": 66
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Dome",
+    "collectionHandle": "dome",
+    "categoryOrder": 67
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Charlotte",
+    "collectionHandle": "charlotte",
+    "categoryOrder": 68
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "All Gifts",
+    "collectionHandle": "all-gifts",
+    "categoryOrder": 69
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Most Gifted Jewelry",
+    "collectionHandle": "most-gifted-jewelry",
+    "categoryOrder": 70
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Jewelry Gifts Under 200",
+    "collectionHandle": "jewelry-gifts-under-200",
+    "categoryOrder": 71
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Gifts Over 200",
+    "collectionHandle": "gifts-over-200",
+    "categoryOrder": 72
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Jewelry Gifts Over 500",
+    "collectionHandle": "jewelry-gifts-over-500",
+    "categoryOrder": 73
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Birthstone Zodiac",
+    "collectionHandle": "birthstone-zodiac",
+    "categoryOrder": 74
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Engravable Jewelry",
+    "collectionHandle": "engravable-jewelry",
+    "categoryOrder": 75
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "The Letter Shop",
+    "collectionHandle": "the-letter-shop",
+    "categoryOrder": 76
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Gift Cards",
+    "collectionHandle": "gift-cards",
+    "categoryOrder": 77
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Birthstones August",
+    "collectionHandle": "birthstones-august",
+    "categoryOrder": 78
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "New",
+    "collectionHandle": "new",
+    "categoryOrder": 79
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "New Earrings",
+    "collectionHandle": "new-earrings",
+    "categoryOrder": 80
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "New Rings",
+    "collectionHandle": "new-rings",
+    "categoryOrder": 81
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "New Necklaces",
+    "collectionHandle": "new-necklaces",
+    "categoryOrder": 82
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "New Bracelets",
+    "collectionHandle": "new-bracelets",
+    "categoryOrder": 83
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Back In Stock",
+    "collectionHandle": "back-in-stock",
+    "categoryOrder": 84
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Interconnected",
+    "collectionHandle": "interconnected",
+    "categoryOrder": 85
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Stevie",
+    "collectionHandle": "stevie",
+    "categoryOrder": 86
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Going Out Jewelry",
+    "collectionHandle": "going-out-jewelry",
+    "categoryOrder": 87
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Everyday Jewelry",
+    "collectionHandle": "everyday-jewelry",
+    "categoryOrder": 88
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Rings",
+    "collectionHandle": "Rings",
+    "categoryOrder": 89
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "ImageCards",
+    "collectionHandle": "ImageCards",
+    "categoryOrder": 90
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Nav",
+    "collectionHandle": "Nav",
+    "categoryOrder": 91
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "PostHoliday",
+    "collectionHandle": "PostHoliday",
+    "categoryOrder": 92
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Cord",
+    "collectionHandle": "Cord",
+    "categoryOrder": 93
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Flat Curb Chain",
+    "collectionHandle": "Flat-curb-chain",
+    "categoryOrder": 94
+  },
+  {
+    "navItem": "Mejuri",
+    "category": "Necklaces",
+    "collectionHandle": "Necklaces",
+    "categoryOrder": 95
+  }
+]

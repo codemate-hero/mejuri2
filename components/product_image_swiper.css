@@ -1,0 +1,24 @@
+.swiper-zoom-container > img, .swiper-zoom-container > svg, .swiper-zoom-container > canvas {
+    object-fit:cover !important;
+}
+.product-swiper-mobile {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+}
+@media (min-width: 768px) {
+  .product-swiper-mobile {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    width: 0 !important;
+  }
+}
