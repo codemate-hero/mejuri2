@@ -15,6 +15,16 @@ function normalizePayPalBaseUrl(value) {
 }
 
 function getPayPalBaseUrl() {
+  const explicitEnvironment = process.env.PAYPAL_ENVIRONMENT?.trim().toLowerCase();
+
+  if (explicitEnvironment === "live") {
+    return "https://api-m.paypal.com";
+  }
+
+  if (explicitEnvironment === "sandbox") {
+    return "https://api-m.sandbox.paypal.com";
+  }
+
   const configuredBaseUrl = normalizePayPalBaseUrl(process.env.PAYPAL_BASE_URL);
 
   if (configuredBaseUrl) {
@@ -39,9 +49,13 @@ async function readPayPalResponse(res, action) {
 
   if (!res.ok) {
     const details = data.details?.map((detail) => detail.description).join(" ");
-    const error = new Error(
-      details || data.message || `PayPal ${action} failed (${res.status})`
-    );
+    const baseUrl = getPayPalBaseUrl();
+    const defaultMessage = details || data.message || `PayPal ${action} failed (${res.status})`;
+    const errorMessage =
+      res.status === 401
+        ? `${defaultMessage}. Check that PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, PAYPAL_BASE_URL, and PAYPAL_ENVIRONMENT match the same environment (sandbox or live). Current PayPal endpoint: ${baseUrl}`
+        : defaultMessage;
+    const error = new Error(errorMessage);
     error.status = res.status;
     error.paypalDebugId = res.headers.get("paypal-debug-id");
     throw error;
