@@ -43,7 +43,7 @@ const groups: FooterGroup[] = [
       { label: "Size Guides", href: "/guided-shop/ring-stacking-guide" },
       { label: "How To Guides", href: "/guided-shop/ring-stacking-guide" },
       { label: "The Lookbook", href: "/guided-shop/look-book" },
-      { label: "Terms & Conditions", href: "https://mejuri.com/world/en/terms-and-conditions" },
+      { label: "Terms & Conditions", href: "/terms-and-conditions" },
     ],
   },
   {
@@ -171,7 +171,7 @@ export function Footer() {
           </a>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <a href="https://mejuri.com/world/en/privacy-policy" target="_blank" rel="noreferrer" className="hover:underline">Privacy Policy</a>
-            <a href="https://mejuri.com/world/en/terms-and-conditions" target="_blank" rel="noreferrer" className="hover:underline">Terms And Conditions</a>
+            <Link href="/terms-and-conditions" className="hover:underline">Terms And Conditions</Link>
             <span>© {new Date().getFullYear()} Mejuri Inc</span>
           </div>
         </div>
