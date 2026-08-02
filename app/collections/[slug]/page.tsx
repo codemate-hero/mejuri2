@@ -48,14 +48,14 @@ export default function CollectionPage() {
   const [products, setProducts] = useState<MongoProduct[]>(() => {
     // Initialize from cache if available
     const cached = collectionCache.get(normalizedSlug);
-    if (cached && Date.now() - cached.timestamp < CACHE_DURATION) {
+    if (cached && cached.products.length > 0 && Date.now() - cached.timestamp < CACHE_DURATION) {
       return cached.products;
     }
     return [];
   });
   const [loading, setLoading] = useState(() => {
     const cached = collectionCache.get(normalizedSlug);
-    return !(cached && Date.now() - cached.timestamp < CACHE_DURATION);
+    return !(cached && cached.products.length > 0 && Date.now() - cached.timestamp < CACHE_DURATION);
   });
   const cachedMeta = collectionCache.get(normalizedSlug);
   const [hasMore, setHasMore] = useState(cachedMeta?.hasMore ?? true);
@@ -164,8 +164,14 @@ export default function CollectionPage() {
       params.set("collectionHandle", normalizedSlug);
     }
 
+    if (filterConfig?.q) {
+      params.set("q", filterConfig.q);
+    }
+
     params.set("page", String(page));
-    params.set("limit", String(PAGE_SIZE));
+    // The New Rings landing page represents the complete rings catalog.
+    // Fetch it in one request so all rings are visible without waiting for infinite scroll.
+    params.set("limit", String(normalizedSlug === "new-rings" ? 250 : PAGE_SIZE));
 
     const sortValues: Record<string, string> = {
       "New Arrivals": "new-arrivals",

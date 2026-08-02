@@ -328,7 +328,7 @@ export function SummerGuidePage() {
           <a href="#colored-stones" className="w-fit border-b border-black font-sans text-[30px] font-bold uppercase leading-none tracking-[0.08em]">
             Colored Stones
           </a>
-          <a href="#summer-essentials" className="w-fit border-b border-black font-sans text-[30px] font-bold uppercase leading-none tracking-[0.08em] sm:col-span-2">
+          <a href="/collections/summer-essentials" className="w-fit border-b border-black font-sans text-[30px] font-bold uppercase leading-none tracking-[0.08em] sm:col-span-2">
             Summer Essentials
           </a>
         </nav>

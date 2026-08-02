@@ -1,13 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
+import { Navbar } from "@/components/Navbar";
+import { PromoBar } from "@/components/PromoBar";
+import { SearchModal } from "@/components/SearchModal";
 
-const heroImage =
-  "https://res.cloudinary.com/mejuri-com/image/upload/c_scale,f_auto,q_auto,w_2560/v1749842739/2025/June/Ring%20Stacking%20Guide/RingStackingGuideCampaign_DT_Fullbleed.jpg";
+const imageBase = "/ring-stacking-guide";
 
-const guideBase =
-  "https://res.cloudinary.com/mejuri-com/image/upload/c_scale,f_auto,q_auto,w_1920/v1749842800/2025/June/Ring%20Stacking%20Guide";
+const guideImage = (name: string) => `${imageBase}/${name}`;
+
+const heroImages = {
+  desktop: guideImage("DT-01_Hero_DT.jpg"),
+  mobile: guideImage("M-01_Hero_M.jpg"),
+};
 
 const ringImages = [
   "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-PaveDiamondThinDomeRing-14K-Angled_498_new.png?v=1757697394&width=600",
@@ -19,37 +26,38 @@ const ringImages = [
 
 const occasionRows = [
   {
+    title: "HOLIDAY LOOKS",
+    text: "Statement stacks made for every invitation on your calendar.",
+    cta: "SHOP HOLIDAY LOOKS",
+    href: "/collections/rings",
+    images: Array.from({ length: 5 }, (_, index) =>
+      guideImage(`DT-03_Holiday-Looks-HolidayLooks${index + 1}_DT.jpg`),
+    ),
+  },
+  {
     title: "WORK",
     text: "A little extra polish, but still you.",
     cta: "SHOP WORK",
-    images: [
-      `${guideBase}/RingStackingGuide_Occassion_Work_01_DT.jpg`,
-      `${guideBase}/RingStackingGuide_Occassion_Work_02_DT.jpg`,
-      `${guideBase}/RingStackingGuide_Occassion_Work_03_DT.jpg`,
-      `${guideBase}/RingStackingGuide_Occassion_Work_04_DT.jpg`,
-    ],
+    href: "/collections/dress-up-dress-down?category=rings",
+    images: Array.from({ length: 5 }, (_, index) => guideImage(`DT-04_Work-Work${index + 1}_DT.jpg`)),
   },
   {
     title: "WEEKEND",
     text: "Relaxed, refined, ready for wherever the day goes.",
     cta: "SHOP WEEKEND",
-    images: [
-      `${guideBase}/RingStackingGuide_Occassion_Weekend_01_DT.jpg`,
-      `${guideBase}/RingStackingGuide_Occassion_Weekend_02_DT.jpg`,
-      `${guideBase}/RingStackingGuide_Occassion_Weekend_03_DT.jpg`,
-      `${guideBase}/RingStackingGuide_Occassion_Weekend_04_DT.jpg`,
-    ],
+    href: "/collections/weekend-jewelry?category=rings",
+    images: Array.from({ length: 5 }, (_, index) =>
+      guideImage(`DT-05_Weekend-Weekend${index + 1}_DT.jpg`),
+    ),
   },
   {
     title: "WEDDING",
     text: "Special stacks for special occasions.",
     cta: "SHOP WEDDING",
-    images: [
-      `${guideBase}/RingStackingGuide_Occassion_Wedding_01_DT.jpg`,
-      `${guideBase}/RingStackingGuide_Occassion_Wedding_02_DT.jpg`,
-      `${guideBase}/RingStackingGuide_Occassion_Wedding_03_DT.jpg`,
-      `${guideBase}/RingStackingGuide_Occassion_Wedding_04_DT.jpg`,
-    ],
+    href: "/collections/wedding?category=rings",
+    images: ["Wedding1", "Wedding2", "Weekend3", "Weekend4", "Weekend5"].map((name) =>
+      guideImage(`DT-06_Wedding-${name}_DT.jpg`),
+    ),
   },
 ];
 
@@ -59,15 +67,15 @@ const collectionBlocks = [
     text: "Designed to fit together. Built to stand out. Destined to be your new favorite stacker.",
     cta: "SHOP PUZZLE",
     href: "/collections/puzzle",
-    image: `${guideBase}/RingStackingGuide_Puzzle.jpg`,
+    image: guideImage("DT-07_Collection-Collection1_DT.jpg"),
     reverse: false,
   },
   {
     title: "DÔME FIGURE COLLECTION",
     text: "Open and inviting, shaped by thoughtful, deliberate movement.",
     cta: "DÔME FIGURE COLLECTION",
-    href: "/collections/dome-figure",
-    image: `${guideBase}/RingStackingGuide_DomeFigure.jpg`,
+    href: "/collections/dome-figure-rings",
+    image: guideImage("DT-07_Collection-Collection2_DT.jpg"),
     reverse: true,
   },
   {
@@ -75,7 +83,7 @@ const collectionBlocks = [
     text: "Born in Paris, shaped in New York, Charlotte's signature soft curves and fluted texture create a playful twist on a classic silhouette.",
     cta: "SHOP CHARLOTTE",
     href: "/collections/charlotte",
-    image: `${guideBase}/RingStackingGuide_Charlotte.jpg`,
+    image: guideImage("DT-07_Collection-Collection3_DT.jpg"),
     reverse: false,
   },
   {
@@ -83,18 +91,14 @@ const collectionBlocks = [
     text: "A study in perspective. Dôme's artful silhouette embraces the duality between structure and movement.",
     cta: "SHOP DÔME",
     href: "/collections/dome",
-    image: `${guideBase}/RingStackingGuide_Dome.jpg`,
+    image: guideImage("DT-07_Collection-Collection4_DT.jpg"),
     reverse: true,
   },
 ];
 
-const communityImages = [
-  "https://res.cloudinary.com/mejuri-com/image/upload/c_scale,f_auto,q_auto,w_1200/v1749842820/2025/June/Ring%20Stacking%20Guide/RingStackingGuide_UGC01_DT.jpg",
-  "https://res.cloudinary.com/mejuri-com/image/upload/c_scale,f_auto,q_auto,w_1200/v1749842820/2025/June/Ring%20Stacking%20Guide/RingStackingGuide_UGC02_DT.jpg",
-  "https://res.cloudinary.com/mejuri-com/image/upload/c_scale,f_auto,q_auto,w_1200/v1749842820/2025/June/Ring%20Stacking%20Guide/RingStackingGuide_UGC03_DT.jpg",
-  "https://res.cloudinary.com/mejuri-com/image/upload/c_scale,f_auto,q_auto,w_1200/v1749842820/2025/June/Ring%20Stacking%20Guide/RingStackingGuide_UGC04_DT.jpg",
-  "https://res.cloudinary.com/mejuri-com/image/upload/c_scale,f_auto,q_auto,w_1200/v1749842820/2025/June/Ring%20Stacking%20Guide/RingStackingGuide_UGC05_DT.jpg",
-];
+const communityImages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12].map((number) =>
+  guideImage(`DT-08_Community-Community${number}_DT.jpg`),
+);
 
 function Heading({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
@@ -173,15 +177,91 @@ function EditorialImage({
   );
 }
 
+function StackBuilder() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const total = ringImages.length;
+  const getIndex = (index: number) => (index + total) % total;
+  const firstRow = [0, 1, 2].map((offset) => ringImages[getIndex(currentIndex + offset)]);
+  const secondRow = [3, 4].map((offset) => ringImages[getIndex(currentIndex + offset)]);
+
+  return (
+    <div className="mt-20 grid items-center gap-10 md:grid-cols-[1fr_400px]">
+      <div className="grid gap-6">
+        <div className="grid grid-cols-[48px_repeat(3,minmax(120px,1fr))_48px] items-center gap-6">
+          <button
+            type="button"
+            onClick={() => setCurrentIndex((index) => getIndex(index - 1))}
+            className="text-[36px]"
+            aria-label="Previous stack"
+          >
+            ←
+          </button>
+          {firstRow.map((image, index) => (
+            <img
+              key={`${image}-${index}`}
+              src={image}
+              alt={`Stack ring ${index + 1}`}
+              className="mx-auto h-[110px] w-full object-contain md:h-[170px]"
+            />
+          ))}
+          <button
+            type="button"
+            onClick={() => setCurrentIndex((index) => getIndex(index + 1))}
+            className="text-[36px]"
+            aria-label="Next stack"
+          >
+            →
+          </button>
+        </div>
+        <div className="grid grid-cols-[repeat(2,minmax(120px,1fr))_36px] items-center gap-6">
+          {secondRow.map((image, index) => (
+            <img
+              key={`${image}-bottom-${index}`}
+              src={image}
+              alt={`Stack ring option ${index + 1}`}
+              className="mx-auto h-[105px] w-full object-contain md:h-[155px]"
+            />
+          ))}
+          <button
+            type="button"
+            onClick={() => setCurrentIndex(0)}
+            className="text-center text-[28px]"
+            aria-label="Reset stack"
+          >
+            ↻
+          </button>
+        </div>
+      </div>
+      <div className="space-y-5">
+        <Link
+          href="/collections/rings"
+          className="block bg-black px-6 py-5 text-center font-sans text-[16px] font-semibold uppercase text-white transition-colors hover:bg-[#79786c]"
+        >
+          Shop Your Stack
+        </Link>
+        <button
+          type="button"
+          onClick={() => setCurrentIndex(0)}
+          className="block w-full border border-black px-6 py-5 font-sans text-[16px] font-semibold uppercase"
+        >
+          Reset
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function OccasionRow({
   title,
   text,
   cta,
+  href,
   images,
 }: {
   title: string;
   text: string;
   cta: string;
+  href: string;
   images: string[];
 }) {
   return (
@@ -189,7 +269,9 @@ function OccasionRow({
       <div className="self-center">
         <Heading className="text-[28px] md:text-[34px]">{title}</Heading>
         <Copy className="mt-5 max-w-[310px] text-[15px] md:text-[16px]">{text}</Copy>
-        <UnderlineLink className="mt-7">{cta}</UnderlineLink>
+        <UnderlineLink href={href} className="mt-7">
+          {cta}
+        </UnderlineLink>
       </div>
       <div className="flex gap-0 overflow-x-auto">
         {images.map((image, index) => (
@@ -239,10 +321,43 @@ function CollectionBlock({
 }
 
 export default function RingStackingGuidePage() {
+  const [hidePromoBar, setHidePromoBar] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setHidePromoBar(window.scrollY > 0);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <main className="bg-white text-black">
+    <>
+      <PromoBar isScrolled={hidePromoBar} hideForSidebar={isMobileMenuOpen || isMegaMenuOpen} />
+      <Navbar
+        isScrolled={true}
+        hidePromoBar={hidePromoBar}
+        isMobileMenuOpen={isMobileMenuOpen}
+        setIsMobileMenuOpen={setIsMobileMenuOpen}
+        isMegaMenuOpen={isMegaMenuOpen}
+        setIsMegaMenuOpen={setIsMegaMenuOpen}
+        onSearchClick={() => setIsSearchOpen(true)}
+        variant="light"
+      />
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+
+      <main className="bg-white pt-[58px] text-black lg:pt-[98px]">
       <section className="relative flex min-h-[560px] items-center justify-center overflow-hidden md:h-[calc(100vh-136px)]">
-        <img src={heroImage} alt="Ring stacking guide" className="absolute inset-0 h-full w-full object-cover" />
+        <picture className="absolute inset-0">
+          <source media="(max-width: 767px)" srcSet={heroImages.mobile} />
+          <img
+            src={heroImages.desktop}
+            alt="Hands styled with a mixed-metal ring stack"
+            className="h-full w-full object-cover"
+          />
+        </picture>
         <div className="absolute inset-0 bg-black/25" />
         <div className="relative px-6 text-center text-white">
           <h1 className="font-sans text-[36px] font-semibold uppercase leading-[1.05] tracking-[0.12em] md:text-[54px]">
@@ -268,7 +383,7 @@ export default function RingStackingGuidePage() {
             ["OCCASIONS", "#occasions"],
             ["COLLECTIONS", "#collections"],
             ["COMMUNITY", "#community"],
-            ["WORK WITH A STYLIST", "#stylist"],
+            ["WORK WITH A STYLIST", "#work-with-a-stylist"],
           ].map(([label, href]) => (
             <UnderlineLink key={label} href={href} className="w-fit text-[22px] text-white md:text-[27px]">
               {label}
@@ -280,45 +395,7 @@ export default function RingStackingGuidePage() {
       <section id="create-your-stack" className="px-6 py-16 md:px-[100px] md:py-24">
         <Heading>Create Your Stack</Heading>
         <Copy className="mt-6 max-w-[760px]">Mix metals, colors, and textures till you love the look. There are no wrong answers.</Copy>
-        <div className="mt-20 grid items-center gap-10 md:grid-cols-[1fr_420px]">
-          <div className="grid grid-cols-[36px_repeat(3,minmax(120px,1fr))_36px] items-center gap-6">
-            <button className="text-[36px]" type="button" aria-label="Previous stack">
-              ←
-            </button>
-            {ringImages.slice(0, 3).map((image, index) => (
-              <img
-                key={image}
-                src={image}
-                alt={`Stack ring ${index + 1}`}
-                className="mx-auto h-[110px] w-full object-contain md:h-[170px]"
-              />
-            ))}
-            <button className="text-[36px]" type="button" aria-label="Next stack">
-              →
-            </button>
-            <div />
-            {ringImages.slice(2, 5).map((image, index) => (
-              <img
-                key={image}
-                src={image}
-                alt={`Stack ring option ${index + 1}`}
-                className="mx-auto h-[105px] w-full object-contain md:h-[155px]"
-              />
-            ))}
-            <div className="text-center text-[28px]">↻</div>
-          </div>
-          <div className="space-y-5">
-            <Link
-              href="/collections/rings"
-              className="block bg-black px-6 py-5 text-center font-sans text-[16px] font-semibold uppercase text-white transition-colors hover:bg-[#79786c]"
-            >
-              Shop Your Stack
-            </Link>
-            <button className="block w-full border border-black px-6 py-5 font-sans text-[16px] font-semibold uppercase" type="button">
-              Reset
-            </button>
-          </div>
-        </div>
+        <StackBuilder />
       </section>
 
       <section id="mixed-metals" className="px-6 py-12 md:px-[100px] md:py-20">
@@ -326,12 +403,12 @@ export default function RingStackingGuidePage() {
         <Copy className="mt-6 max-w-[820px]">Gold-meets-silver-meets-you. Contrast is the new coordination.</Copy>
         <div className="mt-16 grid md:grid-cols-2">
           <EditorialImage
-            src={`${guideBase}/RingStackingGuide_MixedMetal_01_DT.jpg`}
+            src={guideImage("DT-02_Mixed-Metals-MixedMetal1_DT.jpg")}
             alt="Mixed metal stack one"
             className="h-[420px] md:h-[620px]"
           />
           <EditorialImage
-            src={`${guideBase}/RingStackingGuide_MixedMetal_02_DT.jpg`}
+            src={guideImage("DT-02_Mixed-Metals-MixedMetal2_DT.jpg")}
             alt="Mixed metal stack two"
             className="h-[420px] md:h-[620px]"
           />
@@ -376,30 +453,23 @@ export default function RingStackingGuidePage() {
         </div>
       </section>
 
-      <section id="stylist" className="px-6 py-16 md:px-[100px] md:py-24">
+      <section id="work-with-a-stylist" className="px-6 py-16 md:px-[100px] md:py-24">
         <Heading>Work With A Stylist</Heading>
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div className="mt-14 grid items-center gap-10 md:grid-cols-[1.4fr_0.6fr]">
+          <img
+            src={guideImage("DT-09_Stores-Stores2_DT.jpg")}
+            alt="A Mejuri store where a stylist can help build a ring stack"
+            className="h-[380px] w-full object-cover md:h-[620px]"
+          />
           <div>
-            <img
-              src={`${guideBase}/RingStackingGuide_Stylists_Storefront.jpg`}
-              alt="Mejuri storefront"
-              className="h-[380px] w-full object-cover md:h-[560px]"
-            />
             <Copy className="mt-5">Stop by and let our stylists help you build your perfect stack.</Copy>
             <UnderlineLink href="/stores" className="mt-7">
               Find A Store
             </UnderlineLink>
           </div>
-          <div>
-            <img
-              src={`${guideBase}/RingStackingGuide_Stylists_Interior.jpg`}
-              alt="Mejuri styling appointment"
-              className="h-[380px] w-full object-cover md:h-[560px]"
-            />
-            <Copy className="mt-5">Get one-on-one styling advice-because shopping is better in person, anyway.</Copy>
-          </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

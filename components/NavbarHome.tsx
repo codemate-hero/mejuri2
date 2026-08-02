@@ -195,6 +195,7 @@ const generateUrl = (menu: string, category?: string, subcategory?: string) => {
   if (menu === "New In") {
     // Special case: "All New" should go to /collections/new
     if (category === "All New") return "/collections/new";
+    if (category === "Summer Guide") return "/guided-shop/summer";
     if (category) return iconCollectionUrl(category);
     return "/collections/new";
   }
@@ -1010,24 +1011,37 @@ export function NavbarHome({
                 <div className="flex-1 overflow-y-auto px-9 py-12">
                   {megaMenuOpen === "New In" && !desktopSubcategory ? (
                     <div className="grid max-w-[920px] grid-cols-[360px_1fr] gap-x-24 gap-y-10">
-                      <div className="space-y-4">
-                        {newInMenu.categories.slice(1).map((group) => (
-                          <Link key={group.name} href={generateUrl("New In", group.name)} onClick={handleCloseMegaMenu} className="block w-fit cursor-pointer font-sans text-[14px] text-[#666] hover:text-black hover:underline">
-                            {group.name}
-                          </Link>
-                        ))}
-                      </div>
-                      <div>
-                        <Link href="/collections/back-in-stock" onClick={handleCloseMegaMenu} className="cursor-pointer font-sans text-[14px] text-[#666] hover:text-black hover:underline">
-                          Back In Stock
+                      <div className="space-y-10">
+                        <div className="space-y-4">
+                          {newInMenu.categories.slice(1).map((group) => (
+                            <Link key={group.name} href={generateUrl("New In", group.name)} onClick={handleCloseMegaMenu} className="block w-fit cursor-pointer font-sans text-[14px] text-[#666] hover:text-black hover:underline">
+                              {group.name}
+                            </Link>
+                          ))}
+                        </div>
+
+                        <Link href={newInPromo.href} onClick={handleCloseMegaMenu} className="group block w-[300px] cursor-pointer text-black">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={newInPromo.image} alt={newInPromo.copy} className="block h-auto w-full" />
+                          <p className="mt-3 max-w-[330px] font-mono text-[14px] leading-[1.2]">{newInPromo.copy}</p>
+                          <span className="mt-4 inline-block font-display text-[14px] font-bold uppercase underline underline-offset-4 group-hover:no-underline">SHOP NOW</span>
                         </Link>
                       </div>
-                      <Link href={newInPromo.href} onClick={handleCloseMegaMenu} className="group block w-[300px] cursor-pointer text-black">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={newInPromo.image} alt={newInPromo.copy} className="block h-auto w-full" />
-                        <p className="mt-3 max-w-[330px] font-mono text-[14px] leading-[1.2]">{newInPromo.copy}</p>
-                        <span className="mt-4 inline-block font-display text-[14px] font-bold uppercase underline underline-offset-4 group-hover:no-underline">SHOP NOW</span>
-                      </Link>
+                      <div>
+                        <h3 className="mb-6 font-sans text-[14px] font-bold text-black">Featured</h3>
+                        <div className="space-y-4">
+                          {newInMenu.featured.map((item) => (
+                            <Link
+                              key={item}
+                              href={generateUrl("New In", item)}
+                              onClick={handleCloseMegaMenu}
+                              className="block cursor-pointer font-sans text-[14px] text-[#666] hover:text-black hover:underline"
+                            >
+                              {item}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   ) : megaMenuOpen === "Get Inspired" || megaMenuOpen === "Collections" ? (
                     <div className={`grid gap-20 ${megaMenuOpen === "Collections" ? "max-w-[860px] grid-cols-3" : "max-w-[760px] grid-cols-2"}`}>

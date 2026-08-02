@@ -56,7 +56,7 @@ export function normalizeCollectionSlug(value: string): string {
 }
 
 // Mapping from URL slugs to MongoDB collection/category filters
-export const categoryMapping: Record<string, { collectionHandle?: string; category?: string; productType?: string; tags?: string[] }> = {
+export const categoryMapping: Record<string, { collectionHandle?: string; category?: string; productType?: string; q?: string; tags?: string[] }> = {
   // Shop All - All products
   "shop-all": {},
   
@@ -92,7 +92,7 @@ export const categoryMapping: Record<string, { collectionHandle?: string; catego
   "hoop-earrings": { collectionHandle: "hoop-earrings" },
   "stud-earrings": { collectionHandle: "stud-earrings" },
   "drop-earrings": { collectionHandle: "drop-earrings" },
-  "huggie-earrings": { collectionHandle: "huggie-earrings" },
+  "huggie-earrings": { collectionHandle: "earrings", q: "huggie" },
   "ear-jackets": { collectionHandle: "ear-jackets" },
   "threader-earrings": { collectionHandle: "threader-earrings" },
   "mismatched-earrings": { collectionHandle: "mismatched-earrings" },
@@ -100,12 +100,12 @@ export const categoryMapping: Record<string, { collectionHandle?: string; catego
   "ear-cuffs": { collectionHandle: "ear-cuffs" },
   "climber-earrings": { collectionHandle: "climber-earrings" },
   "charm-hoops": { collectionHandle: "charm-hoops" },
-  "cartilage-helix": { collectionHandle: "cartilage-helix" },
-  "small-hoops": { collectionHandle: "small-hoops" },
-  "medium-hoops": { collectionHandle: "medium-hoops" },
-  "large-hoops": { collectionHandle: "large-hoops" },
-  "oversized-hoops": { collectionHandle: "oversized-hoops" },
-  "charm-compatible-hoops": { collectionHandle: "charm-compatible-hoops" },
+  "cartilage-helix": { collectionHandle: "earrings", q: "cartilage" },
+  "small-hoops": { collectionHandle: "earrings", q: "small hoops" },
+  "medium-hoops": { collectionHandle: "earrings", q: "medium hoops" },
+  "large-hoops": { collectionHandle: "earrings", q: "large hoops" },
+  "oversized-hoops": { collectionHandle: "earrings", q: "oversized hoops" },
+  "charm-compatible-hoops": { collectionHandle: "earrings", q: "charm" },
   "hoop-charms": { collectionHandle: "hoop-charms" },
   "best-selling-earrings": { collectionHandle: "best-selling-earrings" },
   "lab-grown-diamond-earrings": { collectionHandle: "lab-grown-diamond-earrings" },
@@ -162,9 +162,13 @@ export const categoryMapping: Record<string, { collectionHandle?: string; catego
   "bracelets-under-200": { collectionHandle: "bracelets-under-200" },
   "jewelry-gifts-under-200": { collectionHandle: "jewelry-gifts-under-200" },
   "new-earrings": { collectionHandle: "new-earrings" },
-  "new-rings": { collectionHandle: "new-rings" },
+  // The imported catalog does not persist a standalone `new-rings` handle.
+  // Keep the New Rings landing URL, but source it from the complete rings collection.
+  "new-rings": { collectionHandle: "rings" },
   "new-necklaces": { collectionHandle: "new-necklaces" },
   "new-bracelets": { collectionHandle: "new-bracelets" },
+  "july-birthstone": { collectionHandle: "birthstones-july" },
+  "engravables": { collectionHandle: "engravable-jewelry" },
 };
 
 // Get category name from slug
