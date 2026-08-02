@@ -193,6 +193,21 @@ export async function GET(request) {
         { "collections.collectionHandle": /^all-gifts$/i },
       ],
     };
+    const necklacesCollection = {
+      $or: [
+        { collectionHandle: /^necklaces$/i },
+        { "collections.collectionHandle": /^necklaces$/i },
+      ],
+    };
+    const earringsCollection = {
+      $or: [
+        { collectionHandle: /^earrings$/i },
+        { "collections.collectionHandle": /^earrings$/i },
+      ],
+    };
+    const braceletTitle = {
+      title: { $regex: "\\bbracelet\\b", $options: "i" },
+    };
     const searchableFields = (value) => {
       const regex = new RegExp(escapeRegex(value), "i");
       return {
@@ -233,6 +248,45 @@ export async function GET(request) {
           allGiftsCollection,
           { variants: { $elemMatch: { price: { $gte: 500 } } } },
         ],
+      },
+      "pendant-necklaces": {
+        $and: [necklacesCollection, searchableFields("pendant")],
+      },
+      "diamond-necklaces": {
+        $and: [necklacesCollection, searchableFields("diamond")],
+      },
+      "charm-necklaces": {
+        $and: [necklacesCollection, searchableFields("charm")],
+      },
+      "stud-earrings": {
+        $and: [earringsCollection, { productType: /^stud$/i }],
+      },
+      bracelets: braceletTitle,
+      "chain-bracelets": {
+        $and: [braceletTitle, { productType: /^chain$/i }],
+      },
+      "pearl-beaded-bracelets": {
+        $and: [
+          braceletTitle,
+          { productType: /^beaded$/i },
+          searchableFields("pearl"),
+        ],
+      },
+      "tennis-bracelet-jewelry": {
+        $and: [braceletTitle, searchableFields("tennis")],
+      },
+      lifestyle: {
+        handle: {
+          $in: [
+            "jewelry-care-kit",
+            "travel-case",
+            "jewelry-box",
+            "small-jewelry-box",
+            "charlotte-lighter-case",
+            "charlotte-trinket-box",
+            "piercing-aftercare-saline-solution",
+          ],
+        },
       },
       puzzle: searchableFields("puzzle"),
     };

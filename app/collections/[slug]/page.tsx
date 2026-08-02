@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { ProductCard, type Product } from "@/components/ProductCard";
 import { Navbar } from "@/components/Navbar";
 import { PromoBar } from "@/components/PromoBar";
@@ -419,8 +420,37 @@ export default function CollectionPage() {
       />
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
+      {normalizedSlug === "before-we-melt" && (
+        <section className="grid min-h-[620px] bg-black pt-[105px] text-white md:grid-cols-2">
+          <div className="flex flex-col items-start justify-center px-6 py-16 md:px-[7vw]">
+            <p className="font-mono text-[12px] font-bold uppercase tracking-[0.18em]">The final edit</p>
+            <h1 className="mt-6 max-w-[620px] font-sans text-[52px] font-extrabold uppercase leading-[0.9] tracking-[-0.03em] md:text-[76px] xl:text-[92px]">
+              Before<br />We Melt
+            </h1>
+            <p className="mt-8 max-w-[470px] font-mono text-[15px] leading-6 text-white/80">
+              Last-chance fine jewelry, selected before it&apos;s gone. Limited quantities, while supplies last.
+            </p>
+            <a
+              href="#before-we-melt-products"
+              className="mt-9 inline-flex border-b border-white pb-1 font-sans text-[13px] font-bold uppercase tracking-[0.06em]"
+            >
+              Shop the collection
+            </a>
+          </div>
+          <div className="min-h-[520px] overflow-hidden bg-[#e9e5df]">
+            <Image
+              src="https://cdn.shopify.com/s/files/1/0797/3637/3533/files/1-Heart_TwoOfHeartsNecklace_V_OnFigStacked_005.jpg?v=1765982351&width=1400"
+              alt="Before We Melt jewelry collection"
+              width={1400}
+              height={1680}
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </section>
+      )}
+
       {/* Page Header */}
-      <section className="bg-white px-4 pb-10 pt-[105px] md:px-8 xl:mx-auto xl:max-w-[1920px]">
+      <section className={`bg-white px-4 pb-10 md:px-8 xl:mx-auto xl:max-w-[1920px] ${normalizedSlug === "before-we-melt" ? "pt-10" : "pt-[105px]"}`}>
         {categoryRailConfig?.breadcrumbs.length ? (
           <nav className="mb-2 flex items-center gap-3 font-mono text-[14px] leading-none text-black">
             {categoryRailConfig.breadcrumbs.map((crumb, index) => (
@@ -434,9 +464,21 @@ export default function CollectionPage() {
           </nav>
         ) : null}
 
-        <h1 className="mb-12 font-sans text-[40px] font-[500] uppercase leading-none tracking-[0.02em] text-black md:text-[32px]">
-          {categoryName}
-        </h1>
+        {normalizedSlug === "before-we-melt" ? (
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p className="font-mono text-[12px] font-bold uppercase tracking-[0.14em] text-[#79786c]">Limited-time collection</p>
+              <h2 className="mt-3 font-sans text-[30px] font-bold uppercase tracking-[0.03em]">Shop Before We Melt</h2>
+            </div>
+            <p className="max-w-[520px] font-mono text-[13px] leading-5 text-[#79786c]">
+              Final-sale styles across rings, earrings, necklaces, bracelets, and charms. Availability is limited.
+            </p>
+          </div>
+        ) : (
+          <h1 className="mb-12 font-sans text-[40px] font-[500] uppercase leading-none tracking-[0.02em] text-black md:text-[32px]">
+            {categoryName}
+          </h1>
+        )}
 
         {categoryRailConfig ? (
           <CategoryTileRail tiles={categoryRailConfig.tiles} />
@@ -541,7 +583,7 @@ export default function CollectionPage() {
         </>
       )}
 
-      <main className="bg-[#F8F8F8] pb-0">
+      <main id="before-we-melt-products" className="scroll-mt-28 bg-[#F8F8F8] pb-0">
         {/* Loading State - Show skeleton or spinner */}
         {loading && products.length === 0 && (
           <div className="flex justify-center py-20">
