@@ -187,6 +187,12 @@ export async function GET(request) {
         { "collections.collectionHandle": /^rings$/i },
       ],
     };
+    const allGiftsCollection = {
+      $or: [
+        { collectionHandle: /^all-gifts$/i },
+        { "collections.collectionHandle": /^all-gifts$/i },
+      ],
+    };
     const searchableFields = (value) => {
       const regex = new RegExp(escapeRegex(value), "i");
       return {
@@ -202,6 +208,32 @@ export async function GET(request) {
       "best-selling-rings": { $and: [ringsCollection, searchableFields("best seller")] },
       "statement-rings": { productType: /^statement$/i },
       "wedding-bands": { $and: [ringsCollection, searchableFields("wedding")] },
+      "mens-rings": {
+        $and: [
+          ringsCollection,
+          {
+            $or: [
+              { collectionHandle: /^mens$/i },
+              { "collections.collectionHandle": /^mens$/i },
+            ],
+          },
+        ],
+      },
+      "bundles-sets": {
+        title: { $regex: "\\b(?:bundle|set)\\b", $options: "i" },
+      },
+      "jewelry-gifts-under-500": {
+        $and: [
+          allGiftsCollection,
+          { variants: { $elemMatch: { price: { $lte: 500 } } } },
+        ],
+      },
+      "luxury-gifts": {
+        $and: [
+          allGiftsCollection,
+          { variants: { $elemMatch: { price: { $gte: 500 } } } },
+        ],
+      },
       puzzle: searchableFields("puzzle"),
     };
     const fallbackFilter = fallbackFilters[collectionHandle.toLowerCase()];

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Minus, Plus, X } from "lucide-react";
+import { createCheckoutUrl } from "@/app/lib/checkoutUrl";
 
 type PreCheckoutDrawerProps = {
   open: boolean;
@@ -208,7 +209,7 @@ export default function PreCheckoutDrawer({ open, onClose }: PreCheckoutDrawerPr
   const goToCheckout = () => {
     window.sessionStorage.setItem("mejuri-returning-from-checkout", "1");
     onClose();
-    router.push("/checkout");
+    router.push(createCheckoutUrl());
   };
 
   return (

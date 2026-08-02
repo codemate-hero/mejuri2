@@ -265,6 +265,72 @@ export const braceletTiles: CategoryRailTile[] = [
   },
 ];
 
+export const mensTiles: CategoryRailTile[] = [
+  {
+    name: "Men's",
+    href: "/collections/mens-jewelry",
+    image: "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/00-MensHardLaunch_SummitBand_OffFigAngledView_PDP_new_eefad1b3-33e5-43cd-acb8-a892f5ad313d.png?v=1758736637",
+  },
+  {
+    name: "Men's Bracelets",
+    href: "/collections/mens-bracelets",
+    image: "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-MensSummerRefresh_CordBraceletSilverColor1-Green_024_Purple_FOC-PDP_new_94b7d2a2-5559-4f93-b8db-c5859c99cd19.png?v=1758043935",
+  },
+  {
+    name: "Men's Necklace",
+    href: "/collections/mens-necklaces",
+    image: "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-MENSCABLECHAIN_CableChain_14k_Front_227_new_eb3b031e-c563-44a8-81d3-ae004c8c3a08.png?v=1758073330",
+  },
+  {
+    name: "Men's Rings",
+    href: "/collections/mens-rings",
+    image: "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-LETTERSHOPSIGNETSMENSCOINSIGNETS-CourageEvilEyeSignetRing-14K-Angled_279_new_abb937f4-81ce-41ad-acb2-54682880bd79.png?v=1761058424",
+  },
+];
+
+export const giftTiles: CategoryRailTile[] = [
+  {
+    name: "All Gifts",
+    href: "/collections/all-gifts",
+    image: "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-NewHoopStandard_TubeHoopsHuggie12mm_V_ANGLED_175_new_5cbbb646-e211-4c1e-bbfa-b25c3ca7c517.png?v=1758043829",
+  },
+  {
+    name: "Gifts Under $200",
+    href: "/collections/jewelry-gifts-under-200",
+    image: "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-AdaDoublePearDropEarringsOffFigureAngledView2160x2580.jpg?v=1774968742",
+  },
+  {
+    name: "Gifts Over $200",
+    href: "/collections/gifts-over-200",
+    image: "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-CHAINSCHARMSFUNCTIONALELEMENTS-BoyfriendClipNecklaceSilver-SS-Front_327_new_11959276-d42f-43e6-bc24-815921859bea.png?v=1758043874",
+  },
+  {
+    name: "Birthstone Gifts",
+    href: "/collections/birthstone-zodiac",
+    image: "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-Copyof01-PuzzleSliderCharm-January-032160x2580.jpg?v=1774452118",
+  },
+  {
+    name: "Personalized Gifts",
+    href: "/collections/engravable-jewelry",
+    image: "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-LETTERSHOPSIGNETSMENSCOINSIGNETS-CharlotteMiniSignetRing-14K-Angled_411_new_5a91c86f-05a7-41ba-8961-3e1e41199498.png?v=1758043907",
+  },
+  {
+    name: "Bundles + Sets",
+    href: "/collections/bundles-sets",
+    image: "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/0-StackerRings_ThinDomeRing_V_OffFigure-PDP_new.png?v=1757697395&width=500&crop=center",
+  },
+  {
+    name: "Gifts For Him",
+    href: "/collections/gifts-for-him",
+    image: "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/00-MensHardLaunch_SummitBand_OffFigAngledView_PDP_new_eefad1b3-33e5-43cd-acb8-a892f5ad313d.png?v=1758736637",
+  },
+  {
+    name: "Gift Cards",
+    href: "/collections/gift-cards",
+    image: "https://cdn.shopify.com/s/files/1/0797/3637/3533/files/shot07A_collateral_325_CROP.jpg?v=1761681719",
+  },
+];
+
 export const charmTiles: CategoryRailTile[] = [
   {
     name: "Charms And Pendants",
@@ -340,6 +406,8 @@ export function getCollectionRailConfig(slug: string): CategoryRailConfig | null
     { parentSlug: "rings", parentLabel: "Rings", tiles: ringTiles, slugs: ringTiles.map((tile) => tile.href.split("/").pop() || "") },
     { parentSlug: "necklaces", parentLabel: "Necklaces", tiles: necklaceTiles, slugs: necklaceTiles.map((tile) => tile.href.split("/").pop() || "") },
     { parentSlug: "bracelets", parentLabel: "Bracelets", tiles: braceletTiles, slugs: braceletTiles.map((tile) => tile.href.split("/").pop() || "") },
+    { parentSlug: "mens-jewelry", parentLabel: "Men's", tiles: mensTiles, slugs: mensTiles.map((tile) => tile.href.split("/").pop() || "") },
+    { parentSlug: "all-gifts", parentLabel: "All Gifts", tiles: giftTiles, slugs: giftTiles.map((tile) => tile.href.split("/").pop() || "") },
     { parentSlug: "charms-and-pendants", parentLabel: "Charms And Pendants", tiles: charmTiles, slugs: charmTiles.map((tile) => tile.href.split("/").pop() || "") },
     { parentSlug: "new", parentLabel: "New In", tiles: newTiles, slugs: newTiles.map((tile) => tile.href.split("/").pop() || "") },
   ];

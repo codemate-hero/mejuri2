@@ -25,5 +25,5 @@ export const createCheckoutUrl = (paymentMethod?: CheckoutPaymentPath) => {
   });
   const paymentPath = paymentMethod ? `/${paymentMethod}` : "";
 
-  return `/checkouts/cn/${checkoutToken}/en-se${paymentPath}?${query.toString()}`;
+  return `/checkouts/cn/${checkoutToken}/en-us${paymentPath}?${query.toString()}`;
 };

@@ -425,15 +425,15 @@ export const giftsMenu = {
   categories: [
     {
       name: "Gift Guide",
-      items: ["Gift Guide"],
+      items: [],
     },
     {
       name: "All Gifts",
-      items: ["All Gifts"],
+      items: [],
     },
     {
       name: "Most Gifted",
-      items: ["Most Gifted"],
+      items: [],
     },
     {
       name: "Gifts by Price",
@@ -454,15 +454,15 @@ export const giftsMenu = {
     },
     {
       name: "Bundles + Sets",
-      items: ["Bundles + Sets"],
+      items: [],
     },
     {
       name: "Gifts For Him",
-      items: ["Gifts For Him"],
+      items: [],
     },
     {
       name: "Gift Cards",
-      items: ["Gift Cards"],
+      items: [],
     },
   ],
 
