@@ -79,7 +79,7 @@ export async function GET(request) {
     filters.push({
       $or: [
         { title: searchRegex },
-        { tags: { $elemMatch: searchRegex } },
+        { tags: searchRegex },
         { productType: searchRegex },
         { category: searchRegex },
         { collectionHandle: searchRegex },
@@ -193,7 +193,7 @@ export async function GET(request) {
         $or: [
           { title: regex },
           { handle: regex },
-          { tags: { $elemMatch: regex } },
+          { tags: regex },
           { productType: regex },
         ],
       };
