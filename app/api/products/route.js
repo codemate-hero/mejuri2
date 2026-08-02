@@ -158,7 +158,7 @@ export async function GET(request) {
     });
   }
 
-  const filter = filters.length > 0 ? { $and: filters } : {};
+  let filter = filters.length > 0 ? { $and: filters } : {};
   const skip = (page - 1) * limit;
 
   const sortOptions = {
@@ -169,13 +169,55 @@ export async function GET(request) {
   };
   const sortOrder = sortOptions[sort] || sortOptions["top-match"];
 
-  const [products, totalProducts] = await Promise.all([
+  let [products, totalProducts] = await Promise.all([
     Product.find(filter)
       .sort(sortOrder)
       .skip(skip)
       .limit(limit),
     Product.countDocuments(filter),
   ]);
+
+  // Some older imports only persisted the parent `rings` collection and omitted
+  // subtype memberships. Prefer the exact collection above, then derive these
+  // well-known ring collections from fields that are present in every import.
+  if (collectionHandle && totalProducts === 0) {
+    const ringsCollection = {
+      $or: [
+        { collectionHandle: /^rings$/i },
+        { "collections.collectionHandle": /^rings$/i },
+      ],
+    };
+    const searchableFields = (value) => {
+      const regex = new RegExp(escapeRegex(value), "i");
+      return {
+        $or: [
+          { title: regex },
+          { handle: regex },
+          { tags: { $elemMatch: regex } },
+          { productType: regex },
+        ],
+      };
+    };
+    const fallbackFilters = {
+      "best-selling-rings": { $and: [ringsCollection, searchableFields("best seller")] },
+      "statement-rings": { productType: /^statement$/i },
+      "wedding-bands": { $and: [ringsCollection, searchableFields("wedding")] },
+      puzzle: searchableFields("puzzle"),
+    };
+    const fallbackFilter = fallbackFilters[collectionHandle.toLowerCase()];
+
+    if (fallbackFilter) {
+      filter = fallbackFilter;
+      [products, totalProducts] = await Promise.all([
+        Product.find(filter)
+          .sort(sortOrder)
+          .skip(skip)
+          .limit(limit),
+        Product.countDocuments(filter),
+      ]);
+    }
+  }
+
   const totalPages = Math.ceil(totalProducts / limit);
 
   return Response.json({
