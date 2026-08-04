@@ -1,6 +1,5 @@
 import Stripe from "stripe";
 import { connectDB } from "@/app/lib/db";
-import { getUserIdFromRequest } from "@/app/lib/auth";
 import { findProductVariant } from "@/app/lib/utils";
 import { getUserIpFromRequest } from "@/app/lib/getUserIp";
 
@@ -17,13 +16,9 @@ export async function POST(req) {
 
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
     await connectDB();
-    const userId = getUserIdFromRequest(req);
-    //const { userId } = await req.json();
     const userIp = getUserIpFromRequest(req);
-    if (!userId) {
-      return Response.json({ message: "userId is required" }, { status: 400 });
-    }
-    const cart = await Cart.findOne({ userId,userIp }).populate("items.productId");
+    const userId = userIp || "guest";
+    const cart = await Cart.findOne({ userId }).populate("items.productId");
 
     if (!cart || cart.items.length === 0) {
       return Response.json({ message: "Cart is empty" }, { status: 400 });

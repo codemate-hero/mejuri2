@@ -3,7 +3,6 @@ import Cart from "@/app/models/Cart";
 import Order from "@/app/models/Order";
 import Product from "@/app/models/Product";
 import { createPayPalOrder } from "@/app/lib/paypal";
-import { getUserIdFromRequest } from "@/app/lib/auth";
 import { getUserIpFromRequest } from "@/app/lib/getUserIp";
 import { findProductVariant } from "@/app/lib/utils";
 
@@ -16,10 +15,10 @@ export async function POST(req) {
       paymentSource = "paypal",
     } = await req.json();
     const currency = "USD";
-    const userId = getUserIdFromRequest(req);
     const userIp = getUserIpFromRequest(req);
+    const userId = userIp || "guest";
 
-    const cart = await Cart.findOne({ userId, userIp }).populate("items.productId");
+    const cart = await Cart.findOne({ userId }).populate("items.productId");
 
     if (!cart || !cart.items.length) {
       return Response.json({ message: "Cart is empty" }, { status: 400 });

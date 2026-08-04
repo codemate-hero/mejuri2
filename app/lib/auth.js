@@ -1,19 +1,29 @@
 import jwt from "jsonwebtoken";
 
+function createAuthError(message = "your session is expired", status = 401) {
+  const error = new Error(message);
+  error.status = status;
+  return error;
+}
+
 export function getUserIdFromRequest(req) {
-  const authHeader = req.headers.get("authorization");
+  const authHeader =
+    req.headers.get("authorization") || req.headers.get("Authorization");
 
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    throw new Error("Token missing");
+    throw createAuthError("Authentication required", 401);
   }
 
-  const token = authHeader.split(" ")[1];
+  const token = authHeader.replace(/^Bearer\s+/i, "").trim();
+
+  if (!token) {
+    throw createAuthError("Authentication required", 401);
+  }
+
   try {
-    const decoded = jwt.decode(token, process.env.JWT_SECRET);
-    return decoded.userId || decoded.id;
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    return decoded.userId || decoded.id || decoded._id;
   } catch (err) {
-    const error = new Error("your session is expired");
-    error.status = 401;
-    throw error;
+    throw createAuthError("your session is expired", 401);
   }
 }

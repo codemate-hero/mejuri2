@@ -1,6 +1,5 @@
 import Stripe from "stripe";
 import { connectDB } from "@/app/lib/db";
-import { getUserIdFromRequest } from "@/app/lib/auth";
 import { findProductVariant } from "@/app/lib/utils";
 import Cart from "@/app/models/Cart";
 import Order from "@/app/models/Order";
@@ -28,15 +27,9 @@ export async function POST(req) {
       discountAmount = 0,
     } = body;
     const currency = "usd";
-    const userId = getUserIdFromRequest(req);
     const userIp = getUserIpFromRequest(req);
-    console.log("User ID from request checkout:", userId);
-    if (!userId) {
-      return Response.json(
-        { message: "userId is required" },
-        { status: 400 }
-      );
-    }
+    const userId = userIp || "guest";
+    console.log("Checkout visitor IP:", userIp);
 
     // Derive a base URL for redirect targets. Prefer env var, otherwise build
     // from request headers so Stripe always gets an absolute URL with scheme.

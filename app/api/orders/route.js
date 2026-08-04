@@ -1,5 +1,4 @@
 import { connectDB } from "@/app/lib/db";
-import { getUserIdFromRequest } from "@/app/lib/auth";
 import { getUserIpFromRequest } from "@/app/lib/getUserIp";
 
 import Order from "@/app/models/Order";
@@ -38,8 +37,8 @@ export async function GET(req) {
   try {
     await connectDB();
 
-    const userId = getUserIdFromRequest(req);
     const userIp = getUserIpFromRequest(req);
+    const userId = userIp || "guest";
     const { searchParams } = new URL(req.url);
     const filters = getShippingFilters(searchParams);
     const query = { userId, userIp };

@@ -159,15 +159,13 @@ import { connectDB } from "@/app/lib/db";
 import { findProductVariant } from "@/app/lib/utils";
 import Cart from "@/app/models/Cart";
 import Product from "@/app/models/Product";
-import { getUserIdFromRequest } from "@/app/lib/auth";
-import { getUserIpFromRequest } from "@/app/lib/getUserIp";
 import { clearUserCart } from "@/app/lib/cart-cleanup";
+import { resolveShoppingUserIdentity } from "@/app/lib/shoppingIdentity";
 // export async function POST(req) {
 //   try {
 //     await connectDB();
 
 //     const { productId, variantId, quantity = 1 } = await req.json();
-//     const userId = getUserIdFromRequest(req);
 //     console.log("Adding to cart for userId:", userId);
 //     if (!userId || !productId || variantId === undefined || variantId === null) {
 //       return Response.json(
@@ -261,8 +259,7 @@ export async function POST(req) {
 
     const { productId, variantId, quantity = 1 } = await req.json();
 
-    const userId = getUserIdFromRequest(req);
-    const userIp = getUserIpFromRequest(req);
+    const { userId, userIp } = resolveShoppingUserIdentity(req);
 
     console.log("Adding to cart for userId:", userId);
     console.log("User IP:", userIp);
@@ -301,7 +298,7 @@ export async function POST(req) {
       );
     }
 
-    let cart = await Cart.findOne({ userId ,userIp});
+    let cart = await Cart.findOne({ userId });
 
     if (!cart) {
       cart = await Cart.create({
@@ -348,12 +345,13 @@ export async function POST(req) {
       cart,
     });
   } catch (error) {
+    const status = error?.status || 500;
     return Response.json(
       {
-        message: "Failed to add product to cart",
-        error: error.message,
+        message: error?.message || "Failed to add product to cart",
+        error: error?.message,
       },
-      { status: 500 }
+      { status }
     );
   }
 }
@@ -365,7 +363,7 @@ export async function PATCH(req) {
     await connectDB();
 
     const { productId, variantId, quantity } = await req.json();
-    const userId = getUserIdFromRequest(req);
+    const { userId } = resolveShoppingUserIdentity(req);
     const parsedQuantity = Number(quantity);
 
     if (!userId || !productId || variantId === undefined || variantId === null) {
@@ -399,9 +397,10 @@ export async function PATCH(req) {
 
     return Response.json({ message: "Cart quantity updated", cart });
   } catch (error) {
+    const status = error?.status || 500;
     return Response.json(
-      { message: "Failed to update cart", error: error.message },
-      { status: 500 }
+      { message: error?.message || "Failed to update cart", error: error?.message },
+      { status }
     );
   }
 }
@@ -412,8 +411,7 @@ export async function DELETE(req) {
 
     const body = await req.json().catch(() => ({}));
     const { productId, variantId, clearCart = false } = body;
-    const userId = getUserIdFromRequest(req);
-    const userIp = getUserIpFromRequest(req);
+    const { userId, userIp } = resolveShoppingUserIdentity(req);
 
     if (clearCart) {
       const result = await clearUserCart(userId, userIp);
@@ -430,7 +428,7 @@ export async function DELETE(req) {
       );
     }
 
-    const cart = await Cart.findOne({ userId,userIp });
+    const cart = await Cart.findOne({ userId });
 
     if (!cart) {
       return Response.json({ message: "Cart not found" }, { status: 404 });
@@ -452,9 +450,10 @@ export async function DELETE(req) {
 
     return Response.json({ message: "Product removed from cart", cart });
   } catch (error) {
+    const status = error?.status || 500;
     return Response.json(
-      { message: "Failed to remove cart item", error: error.message },
-      { status: 500 }
+      { message: error?.message || "Failed to remove cart item", error: error?.message },
+      { status }
     );
   }
 }
@@ -463,8 +462,7 @@ export async function GET(req) {
   try {
     await connectDB();
 
-    const userId = getUserIdFromRequest(req);
-        const userIp = getUserIpFromRequest(req);
+    const { userId, userIp } = resolveShoppingUserIdentity(req);
 
     console.log("GET cart for URL:", userId);
 
@@ -475,7 +473,7 @@ export async function GET(req) {
       );
     }
 
-    const cart = await Cart.findOne({ userId,userIp }).populate("items.productId");
+    const cart = await Cart.findOne({ userId }).populate("items.productId");
 
     if (!cart) {
       return Response.json({
@@ -535,12 +533,13 @@ export async function GET(req) {
       subtotal,
     });
   } catch (error) {
+    const status = error?.status || 500;
     return Response.json(
       {
-        message: "Failed to fetch cart",
-        error: error.message,
+        message: error?.message || "Failed to fetch cart",
+        error: error?.message,
       },
-      { status: 500 }
+      { status }
     );
   }
 }

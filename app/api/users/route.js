@@ -1,19 +1,34 @@
 import { connectDB } from "@/app/lib/db";
 import User from "@/app/models/User";
+import jwt from "jsonwebtoken";
 
 const USER_ID = "6a32f078c08c21e53c441956";
 
 export async function GET() {
   await connectDB();
 
-  const user = await User.findById(USER_ID).select("token").lean();
+  let user = await User.findById(USER_ID).lean();
 
   if (!user) {
-    return Response.json({ message: "User not found" }, { status: 404 });
+    user = await User.create({
+      _id: USER_ID,
+      email: "system@mejuri.local",
+      role: "user",
+    });
   }
 
   if (!user.token) {
-    return Response.json({ message: "Token not found on user" }, { status: 404 });
+    const token = jwt.sign(
+      { userId: user._id.toString(), email: user.email || "system@mejuri.local" },
+      process.env.JWT_SECRET,
+      { expiresIn: "7d" }
+    );
+
+    user = await User.findByIdAndUpdate(
+      USER_ID,
+      { token },
+      { new: true, upsert: true }
+    ).lean();
   }
 
   return Response.json({ token: user.token });
