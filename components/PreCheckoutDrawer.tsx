@@ -363,10 +363,11 @@ export default function PreCheckoutDrawer({ open, onClose }: PreCheckoutDrawerPr
             </div>
           </div>
 
-          <button
+       <button
+  id="gtm-checkout-btn"
   onClick={goToCheckout}
   disabled={cartItems.length === 0}
-  className="gtm-checkout-btn mt-10 h-[56px] w-full cursor-pointer bg-black px-[1.5rem] py-[0.75rem] text-[14px] font-normal uppercase leading-[1.25rem] tracking-[0.04em] text-white transition hover:bg-[#77766c] disabled:cursor-not-allowed disabled:bg-[#aaa]"
+  className="mt-10 h-[56px] w-full cursor-pointer bg-black px-[1.5rem] py-[0.75rem] text-[14px] font-normal uppercase leading-[1.25rem] tracking-[0.04em] text-white transition hover:bg-[#77766c] disabled:cursor-not-allowed disabled:bg-[#aaa]"
 >
   Checkout
 </button>
