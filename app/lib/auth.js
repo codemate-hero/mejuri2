@@ -6,7 +6,7 @@ function createAuthError(message = "your session is expired", status = 401) {
   return error;
 }
 
-export function getUserIdFromRequest(req) {
+export function getUserIdFromRequest(req, { rejectSystemUser = false } = {}) {
   const authHeader =
     req.headers.get("authorization") || req.headers.get("Authorization");
 
@@ -22,8 +22,12 @@ export function getUserIdFromRequest(req) {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    if (rejectSystemUser && decoded.email === "system@mejuri.local") {
+      throw createAuthError("Authentication required", 401);
+    }
     return decoded.userId || decoded.id || decoded._id;
   } catch (err) {
+    if (err.status) throw err;
     throw createAuthError("your session is expired", 401);
   }
 }

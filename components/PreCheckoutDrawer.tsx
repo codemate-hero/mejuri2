@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Minus, Plus, X } from "lucide-react";
 import { createCheckoutUrl } from "@/app/lib/checkoutUrl";
+import { hasAuthenticatedUserToken, requestSignin } from "@/app/lib/clientAuth";
 
 type PreCheckoutDrawerProps = {
   open: boolean;
@@ -173,6 +174,11 @@ export default function PreCheckoutDrawer({ open, onClose }: PreCheckoutDrawerPr
   };
 
   const moveToWishlist = async (item: CartItem) => {
+    if (!hasAuthenticatedUserToken(localStorage.getItem("token"))) {
+      requestSignin();
+      return;
+    }
+
     const response = await fetch("/api/wishlist", {
       method: "POST",
       headers: { "Content-Type": "application/json", ...getAuthHeaders() },

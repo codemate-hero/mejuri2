@@ -10,6 +10,7 @@ import { SearchModal } from "@/components/SearchModal";
 import AddToCartDrawer from "@/components/AddToCartDrawer";
 import { ProductCard, type Product as ProductCardItem } from "@/components/ProductCard";
 import ProductImageSwiper from '@/components/ProductImageSwiper';
+import { hasAuthenticatedUserToken, requestSignin } from "@/app/lib/clientAuth";
 
 interface Product {
   _id: string;
@@ -375,6 +376,10 @@ export default function ProductDetailPage(props: any) {
   useEffect(() => {
     async function checkWishlist() {
       if (!product) return;
+      if (!hasAuthenticatedUserToken(localStorage.getItem("token"))) {
+        setIsInWishlist(false);
+        return;
+      }
 
       try {
         const response = await fetch("/api/wishlist", {
@@ -570,6 +575,10 @@ export default function ProductDetailPage(props: any) {
 
   const handleWishlistToggle = async () => {
     if (!product) return;
+    if (!hasAuthenticatedUserToken(localStorage.getItem("token"))) {
+      requestSignin();
+      return;
+    }
 
     setWishlistLoading(true);
 

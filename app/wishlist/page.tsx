@@ -7,6 +7,7 @@ import { PromoBar } from "@/components/PromoBar";
 import { Footer } from "@/components/Footer";
 import { SearchModal } from "@/components/SearchModal";
 import AddToCartDrawer from "@/components/AddToCartDrawer";
+import { hasAuthenticatedUserToken, requestSignin } from "@/app/lib/clientAuth";
 
 interface WishlistProduct {
   productId: {
@@ -54,6 +55,7 @@ const getAuthHeaders = () => ({
 export default function WishlistPage() {
   const [wishlist, setWishlist] = useState<WishlistData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [authenticationRequired, setAuthenticationRequired] = useState(false);
   const [hidePromoBar, setHidePromoBar] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
@@ -64,6 +66,12 @@ export default function WishlistPage() {
 
   useEffect(() => {
     async function fetchWishlist() {
+      if (!hasAuthenticatedUserToken(localStorage.getItem("token"))) {
+        setAuthenticationRequired(true);
+        setLoading(false);
+        return;
+      }
+
       try {
         const response = await fetch("/api/wishlist", {
           headers: getAuthHeaders(),
@@ -71,6 +79,7 @@ export default function WishlistPage() {
         const data = await response.json();
 
         if (data.success) {
+          setAuthenticationRequired(false);
           setWishlist(data.data);
         }
       } catch (error) {
@@ -204,7 +213,18 @@ export default function WishlistPage() {
 
       {/* Wishlist Content */}
       <div className="mx-auto max-w-[1920px] px-6 pb-16">
-        {!wishlist || wishlist.products.length === 0 ? (
+        {authenticationRequired ? (
+          <div className="flex flex-col items-center justify-center py-20">
+            <p className="mb-4 text-lg text-gray-600">Sign in to view and save your wishlist</p>
+            <button
+              type="button"
+              onClick={requestSignin}
+              className="bg-black px-8 py-3 text-sm font-bold uppercase text-white"
+            >
+              Sign In
+            </button>
+          </div>
+        ) : !wishlist || wishlist.products.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-20">
             <p className="text-lg text-gray-600 mb-4">Your wishlist is empty</p>
             <Link href="/shop" className="text-sm font-bold text-black underline hover:no-underline">

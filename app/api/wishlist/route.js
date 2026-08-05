@@ -10,7 +10,7 @@ export async function GET(req) {
   try {
     await connectDB();
 
-    const userId = getUserIdFromRequest(req);
+    const userId = getUserIdFromRequest(req, { rejectSystemUser: true });
 
     const wishlist = await Wishlist.findOne({ userId }).populate(
       "products.productId",
@@ -27,7 +27,7 @@ export async function GET(req) {
   } catch (error) {
     return NextResponse.json(
       { success: false, message: error.message },
-      { status: 500 },
+      { status: error.status || 500 },
     );
   }
 }
@@ -37,7 +37,7 @@ export async function POST(req) {
   try {
     await connectDB();
 
-    const userId = getUserIdFromRequest(req);
+    const userId = getUserIdFromRequest(req, { rejectSystemUser: true });
     const { productId, variantId } = await req.json();
 
     if (!productId || !variantId) {
@@ -75,7 +75,7 @@ export async function POST(req) {
   } catch (error) {
     return NextResponse.json(
       { success: false, message: error.message },
-      { status: 500 },
+      { status: error.status || 500 },
     );
   }
 }
@@ -85,7 +85,7 @@ export async function DELETE(req) {
   try {
     await connectDB();
 
-    const userId = getUserIdFromRequest(req);
+    const userId = getUserIdFromRequest(req, { rejectSystemUser: true });
     const { productId, variantId } = await req.json();
 
     if (!productId || !variantId) {
@@ -116,7 +116,7 @@ export async function DELETE(req) {
   } catch (error) {
     return NextResponse.json(
       { success: false, message: error.message },
-      { status: 500 },
+      { status: error.status || 500 },
     );
   }
 }

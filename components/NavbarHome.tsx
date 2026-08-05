@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import AccountDrawer from "./AccountDrawer";
 import SigninModal from "./SigninModal";
+import { SIGNIN_REQUESTED_EVENT } from "@/app/lib/clientAuth";
 import CreateAccountModal from "./CreateAccountModal";
 import ForgotPasswordModal from "./ForgotPasswordModel";
 import { StoreServicesDrawer } from "./StoreServicesDrawer";
@@ -836,6 +837,21 @@ export function NavbarHome({
     }, 300);
   };
 
+  const openMobileSigninModal = () => {
+    handleCloseMobileMenu();
+    setTimeout(() => setSigninOpen(true), 300);
+  };
+
+  useEffect(() => {
+    const handleSigninRequest = () => {
+      setAccountOpen(false);
+      setSigninOpen(true);
+    };
+
+    window.addEventListener(SIGNIN_REQUESTED_EVENT, handleSigninRequest);
+    return () => window.removeEventListener(SIGNIN_REQUESTED_EVENT, handleSigninRequest);
+  }, []);
+
   const openCreateAccountModal = () => {
     setAccountOpen(false);
 
@@ -1304,10 +1320,14 @@ export function NavbarHome({
 
                     {/* Footer Links */}
                     <div className="space-y-4 border-t border-gray-200 pt-6">
-                      <a href="/account" className="flex cursor-pointer items-center justify-between font-sans text-[14px] text-black">
+                      <button
+                        type="button"
+                        onClick={openMobileSigninModal}
+                        className="flex w-full cursor-pointer items-center justify-between font-sans text-[14px] text-black"
+                      >
                         <span>Account</span>
                         <span className="text-[12px]">▸</span>
-                      </a>
+                      </button>
                       <a href="/wishlist" className="block cursor-pointer font-sans text-[14px] text-black">Wishlist</a>
                       <a href="/stores" className="block cursor-pointer font-sans text-[14px] text-black">Stores & Services</a>
                       <a href="/faqs" className="block cursor-pointer font-sans text-[14px] text-black">FAQs</a>

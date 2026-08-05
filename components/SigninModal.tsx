@@ -47,7 +47,7 @@ export default function SigninModal({
 
       if (data.token) {
         localStorage.setItem("token", data.token);
-      
+        window.dispatchEvent(new Event("mejuri-auth-updated"));
       }
 
       setMessage("Login successful");

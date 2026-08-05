@@ -3,18 +3,24 @@
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { hasAuthenticatedUserToken } from "@/app/lib/clientAuth";
 
 export default function AccountDrawer({
   open,
   onClose,
   onSigninClick,
   onCreateAccountClick,
-}: any) {
+}: {
+  open: boolean;
+  onClose: () => void;
+  onSigninClick: () => void;
+  onCreateAccountClick: () => void;
+}) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const checkAuth = () => {
-      setIsLoggedIn(Boolean(localStorage.getItem("token")));
+      setIsLoggedIn(hasAuthenticatedUserToken(localStorage.getItem("token")));
     };
 
       checkAuth();
